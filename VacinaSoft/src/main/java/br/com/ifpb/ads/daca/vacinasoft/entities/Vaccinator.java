@@ -17,6 +17,6 @@ import javax.persistence.Table;
 @Table(name="Vaccinator")
 public class Vaccinator {
     
-    String nameVaccinator;
-    String cpfVaccinator;
+    private String nameVaccinator;
+    private String cpfVaccinator;
 }
