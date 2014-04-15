@@ -6,10 +6,17 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Joelton
  */
+@Entity
+@Table(name="Vaccine")
 public class Vaccine {
     
+    String wayAdministration;
+    String nameVaccine;
 }
