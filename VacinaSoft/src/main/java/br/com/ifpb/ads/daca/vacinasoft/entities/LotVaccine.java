@@ -18,9 +18,10 @@ import javax.persistence.Table;
 @Table(name="LotVaccine")
 public class LotVaccine {
     
-    Date validDate;
+    Date validityDate;
     String laboratory;
-    Int quantidadeAmpolas;
-    Date dataRecebimento;
-    String codigoLote
+    Int amountAmpoule; // quantidade de ampolas
+    Date receiptDate; // data de recebimento
+    String lotCode;
+    Int amountDose; // quantidade de doses
 }
