@@ -6,10 +6,21 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
+import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author Joelton
  */
+@Entity
+@Table(name="Administration")
 public class Administration {
     
+    private String strategyAdministration;
+    private String psfAdministration;
+    private String cnes;
+    private String vaccineDose;
+    private Date administrationDate;
 }
