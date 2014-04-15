@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Vaccinator")
-public class Vaccinator {
+public class Vaccinator extends AbstractEntity{
     
     private String nameVaccinator;
     private String cpfVaccinator;

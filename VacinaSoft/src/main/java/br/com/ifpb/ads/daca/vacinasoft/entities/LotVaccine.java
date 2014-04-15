@@ -16,12 +16,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="LotVaccine")
-public class LotVaccine {
+public class LotVaccine extends AbstractEntity{
     
     private Date validityDate;
     private String laboratory;
-    private Int amountAmpoule; // quantidade de ampolas
+    private int amountAmpoule; // quantidade de ampolas
     private Date receiptDate; // data de recebimento
     private String lotCode;
-    private Int amountDose; // quantidade de doses
+    private int amountDose; // quantidade de doses
 }

@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Administration")
-public class Administration {
+public class Administration extends AbstractEntity{
     
     private String strategyAdministration;
     private String psfAdministration;
