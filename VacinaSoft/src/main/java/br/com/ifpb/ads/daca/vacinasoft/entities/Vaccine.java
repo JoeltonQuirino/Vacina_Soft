@@ -6,6 +6,7 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -15,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Vaccine")
-public class Vaccine {
+public class Vaccine implements Serializable {
     
     private String wayAdministration;
     private String nameVaccine;

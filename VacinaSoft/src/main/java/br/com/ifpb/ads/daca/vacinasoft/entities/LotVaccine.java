@@ -6,6 +6,7 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="LotVaccine")
-public class LotVaccine extends AbstractEntity{
+public class LotVaccine extends AbstractEntity implements Serializable{
     
     private Date validityDate;
     private String laboratory;
