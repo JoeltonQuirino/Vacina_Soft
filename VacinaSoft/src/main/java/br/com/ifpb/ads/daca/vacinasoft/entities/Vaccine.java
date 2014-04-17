@@ -7,6 +7,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -15,9 +16,12 @@ import javax.persistence.Table;
  * @author Joelton
  */
 @Entity
-@Table(name="Vaccine")
+@Table(name = "Vaccine")
 public class Vaccine implements Serializable {
     
+    @Column (name = "wayAdministration")
     private String wayAdministration;
+    
+    @Column (name = "nameVaccine")
     private String nameVaccine;
 }
