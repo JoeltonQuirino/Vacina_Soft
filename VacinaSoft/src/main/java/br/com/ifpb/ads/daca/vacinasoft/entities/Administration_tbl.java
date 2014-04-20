@@ -17,21 +17,21 @@ import javax.persistence.Table;
  * @author Joelton
  */
 @Entity
-@Table(name = "Administration")
-public class Administration extends AbstractEntity implements Serializable{
+@Table(name = "Administration_tbl")
+public class Administration_tbl extends AbstractEntity implements Serializable{
     
-    @Column (name = "strategyAdministration")
-    private String strategyAdministration;
+    @Column (name = "strategy_administration", nullable = false)
+    private String strategy_administration;
     
-    @Column (name = "psfAdministration")
-    private String psfAdministration;
+    @Column (name = "psf_administration")
+    private String psf_administration;
     
     @Column (name = "cnes")
     private String cnes;
     
-    @Column (name = "vaccine")
-    private String vaccineDose;
+    @Column (name = "vaccine_dose", nullable = false)
+    private String vaccine_dose;
     
-    @Column (name = "administrationDate")
-    private Date administrationDate;
+    @Column (name = "administration_date", nullable = false)
+    private Date administration_date;
 }

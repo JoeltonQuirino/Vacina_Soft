@@ -16,12 +16,12 @@ import javax.persistence.Table;
  * @author Joelton
  */
 @Entity
-@Table(name = "Vaccinator")
-public class Vaccinator extends AbstractEntity implements Serializable{
+@Table(name = "Vaccine_tbl")
+public class Vaccine_tbl extends AbstractEntity implements Serializable {
     
-    @Column (name = "namevaccinator")
-    private String nameVaccinator;
+    @Column (name = "way_administration", nullable = false)
+    private String way_administration;
     
-    @Column (name = "cpfVaccinator")
-    private String cpfVaccinator;
+    @Column (name = "name_vaccine", nullable = false)
+    private String name_vaccine;
 }
