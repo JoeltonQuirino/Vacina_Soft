@@ -10,16 +10,28 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Joelton
  */
 @Entity
-@Table(name = "Lot_Vaccine")
-public class Lot_Vaccine_tbl extends AbstractEntity implements Serializable{
+@Table(name = "lot_vaccine_tbl")
+public class LotVaccine extends AbstractEntity implements Serializable{
     
+    private static final long serialVersionUID = 1L;
+    
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name = "id_lot", nullable = false)
+    private Long id_lot;
+    
+    @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "validity_date", nullable = false)
     private Date validity_date;
     
@@ -29,6 +41,7 @@ public class Lot_Vaccine_tbl extends AbstractEntity implements Serializable{
     @Column (name = "amount_ampoule")
     private int amount_ampoule; // quantidade de ampolas
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     @Column (name = "receipt_date")
     private Date receipt_date; // data de recebimento
     
