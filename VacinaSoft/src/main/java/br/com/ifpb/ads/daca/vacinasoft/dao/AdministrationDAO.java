@@ -6,12 +6,12 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.dao;
 
-import br.com.ifpb.ads.daca.vacinasoft.entities.Vaccine;
+import br.com.ifpb.ads.daca.vacinasoft.entities.Administration;
 
 /**
  *
- * @author Joelton
+ * @author WitaloCarlos
  */
-public class VaccineDAO extends AbstractDAO<Vaccine>{
+public class AdministrationDAO extends AbstractDAO<Administration>{
     
 }

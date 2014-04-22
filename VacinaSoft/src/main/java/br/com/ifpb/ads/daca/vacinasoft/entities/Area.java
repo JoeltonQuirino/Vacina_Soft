@@ -9,6 +9,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,6 +22,9 @@ public class Area extends AbstractEntity implements Serializable{
     
     @Column(name = "description")
     private String description;
+    
+    @OneToOne(mappedBy = "serviceArea", targetEntity = HealthAgent.class)
+    private HealthAgent agent;
 
     public String getDescription() {
         return description;

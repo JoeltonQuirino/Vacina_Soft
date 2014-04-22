@@ -9,7 +9,11 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -37,22 +41,27 @@ public class PSFUser extends AbstractEntity implements Serializable {
     private String susCard;
     @Column(name = "responsible_for_completing")
     private String responsibleForCompleting;
+    @Temporal(TemporalType.DATE)
     @Column(name = "birth_date")
     private Date birthDate;
+    @Temporal(TemporalType.DATE)
     @Column(name = "registration_date")
     private Date registrationDate;
     @Column(name = "gender")
     private char gender;
     @Column(name = "adress_number")
     private int adressNumber;
+    
     @Column(name = "health_agent")
-    private long healthAgent;
+    @ManyToOne
+    @JoinColumn(name = "id", table = "health_agent_tbl")
+    private HealthAgent healthAgent;
 
-    public long getHealthAgent() {
+    public HealthAgent getHealthAgent() {
         return healthAgent;
     }
 
-    public void setHealthAgent(long healthAgent) {
+    public void setHealthAgent(HealthAgent healthAgent) {
         this.healthAgent = healthAgent;
     }
     
