@@ -3,24 +3,73 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.ifpb.ads.daca.vacinasoft.entities;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author WitaloCarlos
  */
-public class Street {
-    
+@Entity
+@Table(name="street_tbl")
+public class Street extends AbstractEntity implements Serializable {
+
+    @Column(name = "district")
     private String district;
+    @Column(name = "name_street")
     private String nameStreet;
-    private int number;
-    private String complement;
-    private String state;
+    @Column(name = "region")
+    private String region;
+    @Column(name = "postal_code")
     private String postalCode;
+    @Column(name = "country_code")
     private String countryCode;
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getNameStreet() {
+        return nameStreet;
+    }
+
+    public void setNameStreet(String nameStreet) {
+        this.nameStreet = nameStreet;
+    }
+
     
-    
-    
-    
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
+   
+
 }

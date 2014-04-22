@@ -6,10 +6,30 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author WitaloCarlos
  */
-public class Area {
+@Entity
+@Table(name = "area_tbl")
+public class Area extends AbstractEntity implements Serializable{
+    
+    @Column(name = "description")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    
     
 }
