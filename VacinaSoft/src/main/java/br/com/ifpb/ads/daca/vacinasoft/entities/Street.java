@@ -6,8 +6,12 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -20,14 +24,22 @@ public class Street extends AbstractEntity implements Serializable {
 
     @Column(name = "district")
     private String district;
+    
     @Column(name = "name_street")
     private String nameStreet;
+    
     @Column(name = "region")
     private String region;
+    
     @Column(name = "postal_code")
     private String postalCode;
+    
     @Column(name = "country_code")
     private String countryCode;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_user", referencedColumnName = "id")
+    private Set<PSFUser> psfUsers;
 
     public String getDistrict() {
         return district;
