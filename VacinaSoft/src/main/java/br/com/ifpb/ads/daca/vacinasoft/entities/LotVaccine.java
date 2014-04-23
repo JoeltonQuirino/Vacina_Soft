@@ -10,9 +10,9 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -26,28 +26,129 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     private static final long serialVersionUID = 1L;
     
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name = "id_lot", nullable = false)
-    private Long id_lot;
-    
     @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "validity_date", nullable = false)
-    private Date validity_date;
+    private Date validityDate;
     
     @Column (name = "laboratory", nullable = false)
     private String laboratory;
     
     @Column (name = "amount_ampoule")
-    private int amount_ampoule; // quantidade de ampolas
+    private int amountAmpoule; // quantidade de ampolas
     
     @Temporal(javax.persistence.TemporalType.DATE)
     @Column (name = "receipt_date")
-    private Date receipt_date; // data de recebimento
+    private Date receiptDate; // data de recebimento
     
     @Column (name = "lot_code", nullable = false)
-    private String lot_code;
+    private String lotCode;
     
     @Column (name = "amount_dose")
-    private int amount_dose; // quantidade de doses
+    private int amountDose; // quantidade de doses
+    
+    @ManyToOne
+    @JoinColumn(name = "id_vaccine")
+    private Vaccine vaccine;
+    
+    @OneToOne
+    @JoinColumn (name = "id_lot")
+    private Administration administration; 
+            
+    /**
+     * @return the laboratory
+     */
+    public String getLaboratory() {
+        return laboratory;
+    }
+
+    /**
+     * @param laboratory the laboratory to set
+     */
+    public void setLaboratory(String laboratory) {
+        this.laboratory = laboratory;
+    }
+
+    /**
+     * @return the amountAmpoule
+     */
+    public int getAmountAmpoule() {
+        return amountAmpoule;
+    }
+
+    /**
+     * @param amountAmpoule the amountAmpoule to set
+     */
+    public void setAmountAmpoule(int amountAmpoule) {
+        this.amountAmpoule = amountAmpoule;
+    }
+
+    /**
+     * @return the receiptDate
+     */
+    public Date getReceiptDate() {
+        return receiptDate;
+    }
+
+    /**
+     * @param receiptDate the receiptDate to set
+     */
+    public void setReceiptDate(Date receiptDate) {
+        this.receiptDate = receiptDate;
+    }
+
+    /**
+     * @return the lotCode
+     */
+    public String getLotCode() {
+        return lotCode;
+    }
+
+    /**
+     * @param lotCode the lotCode to set
+     */
+    public void setLotCode(String lotCode) {
+        this.lotCode = lotCode;
+    }
+
+    /**
+     * @return the amountDose
+     */
+    public int getAmountDose() {
+        return amountDose;
+    }
+
+    /**
+     * @param amountDose the amountDose to set
+     */
+    public void setAmountDose(int amountDose) {
+        this.amountDose = amountDose;
+    }
+
+    /**
+     * @return the vaccine
+     */
+    public Vaccine getVaccine() {
+        return vaccine;
+    }
+
+    /**
+     * @param vaccine the vaccine to set
+     */
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    /**
+     * @return the validityDate
+     */
+    public Date getValidityDate() {
+        return validityDate;
+    }
+
+    /**
+     * @param validityDate the validityDate to set
+     */
+    public void setValidityDate(Date validityDate) {
+        this.validityDate = validityDate;
+    }   
 }
