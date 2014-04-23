@@ -7,10 +7,15 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,33 +30,49 @@ public class PSFUser extends AbstractEntity implements Serializable {
 
     @Column(name = "user_name")
     private String userName;
+
     @Column(name = "mother_name")
     private String motherName;
+
     @Column(name = "father_name")
     private String fatherName;
+
     @Column(name = "ethnicity")
     private String ethnicity;
+
     @Column(name = "adress_complement")
     private String adressComplement;
+
     @Column(name = "cpf")
     private String cpf;
+
     @Column(name = "rg")
     private String rg;
+
     @Column(name = "sus_card")
     private String susCard;
+
     @Column(name = "responsible_for_completing")
     private String responsibleForCompleting;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "birth_date")
     private Date birthDate;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "registration_date")
     private Date registrationDate;
+
     @Column(name = "gender")
     private char gender;
+
     @Column(name = "adress_number")
     private int adressNumber;
-    
+
+    @Column(name = "adress_street")
+    @OneToMany(mappedBy = "psfUsers", targetEntity = Street.class)
+    private Street adressStreet;
+
     @Column(name = "health_agent")
     @ManyToOne
     @JoinColumn(name = "id", table = "health_agent_tbl")
@@ -64,8 +85,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
     public void setHealthAgent(HealthAgent healthAgent) {
         this.healthAgent = healthAgent;
     }
-    
-    
+
     public String getUserName() {
         return userName;
     }
@@ -169,7 +189,5 @@ public class PSFUser extends AbstractEntity implements Serializable {
     public void setAdressNumber(int adressNumber) {
         this.adressNumber = adressNumber;
     }
-
-    
 
 }
