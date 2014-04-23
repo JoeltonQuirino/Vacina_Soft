@@ -49,6 +49,10 @@ public class Administration extends AbstractEntity implements Serializable{
     
     @OneToOne (mappedBy = "Administration", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
+    
+    @OneToOne (mappedBy = "Administratioin", targetEntity = LotVaccine.class)
+    private LotVaccine lotVaccine2;
+    
 
     /**
      * @return the strategyAdministration
