@@ -46,14 +46,16 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     @Column (name = "amount_dose")
     private int amountDose; // quantidade de doses
     
+    @Column (name = "id_vaccine")
     @ManyToOne
-    @JoinColumn(name = "id_vaccine")
+    @JoinColumn(name = "id_vaccine", table = "vaccine")
     private Vaccine idVaccine;
     
+    @Column (name = "id_lot")
     @OneToOne
-    @JoinColumn (name = "id_lot", referencedColumnName = "id_lot")
+    @JoinColumn (name = "id_lot", referencedColumnName = "id_lot", table = "lot_vaccine")
     private Administration lotId;
-    
+        
     /**
      * @return the laboratory
      */

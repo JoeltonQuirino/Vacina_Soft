@@ -10,6 +10,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -31,6 +33,11 @@ public class Vaccinator extends AbstractEntity implements Serializable{
     
     @Column (name = "cpf_vaccinator", nullable = false, length = 11)
     private String cpfVaccinator;
+    
+    @Column (name = "administration")
+    @OneToMany
+    @JoinColumn (name = "coren_reccord", table = "vaccinator")
+    private Administration administration;
 
     /**
      * @return the corenRecord

@@ -47,11 +47,17 @@ public class Administration extends AbstractEntity implements Serializable{
     @Column (name = "administration_date", nullable = false)
     private Date administrationDate;
     
-    @OneToOne (mappedBy = "Administration", targetEntity = LotVaccine.class)
+    @Column (name = "lot_vaccine")
+    @OneToOne (mappedBy = "id_lot", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
    
-    @OneToOne (mappedBy = "psf_user", targetEntity = PSFUser.class)
+    @Column (name = "psf_user")
+    @OneToOne (mappedBy = "id", targetEntity = PSFUser.class)
     private PSFUser psfUser;
+    
+    @Column (name = "vaccinator")
+    @OneToOne (mappedBy = "coren_record", targetEntity = Vaccinator.class)
+    private Vaccinator vaccinator;
 
     /**
      * @return the strategyAdministration

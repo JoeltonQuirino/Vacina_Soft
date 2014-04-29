@@ -12,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -75,8 +74,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @JoinColumn(name = "id", table = "health_agent_tbl")
     private HealthAgent healthAgent;
     
-    //@OneToOne
-    //@JoinColumn (name = "user_id", referencedColumnName = "")
+    
     
 
     public HealthAgent getHealthAgent() {
