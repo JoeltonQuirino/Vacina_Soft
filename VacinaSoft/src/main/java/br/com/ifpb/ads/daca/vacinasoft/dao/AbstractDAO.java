@@ -22,7 +22,7 @@ public abstract class AbstractDAO<T extends AbstractEntity> {
     protected static EntityManager entityManager;
 
     static {
-        EntityManagerFactory entityFabrica = Persistence.createEntityManagerFactory("ComaBemLanchonete");
+        EntityManagerFactory entityFabrica = Persistence.createEntityManagerFactory("br.com.ifpb.ads.daca_VacinaSoft_war_1.0-SNAPSHOTPU");
         entityManager = entityFabrica.createEntityManager();
     }
 
