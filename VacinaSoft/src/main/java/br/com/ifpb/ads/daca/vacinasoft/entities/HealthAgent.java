@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
@@ -21,12 +20,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "health_agent_tbl")
-public class HealthAgent extends AbstractEntity implements Serializable{
-    
+public class HealthAgent extends AbstractEntity implements Serializable {
+
     @Column(name = "name")
     private String name;
-    
-   
+
     @OneToMany(mappedBy = "healthAgent", targetEntity = PSFUser.class)
     private List<PSFUser> PSFUsers;
 
@@ -37,7 +35,7 @@ public class HealthAgent extends AbstractEntity implements Serializable{
     public void setPSFUsers(List<PSFUser> PSFUsers) {
         this.PSFUsers = PSFUsers;
     }
-    
+
     @Column(name = "service_area")
     @OneToOne
     @JoinColumn(name = "id_area", referencedColumnName = "id")
@@ -57,6 +55,6 @@ public class HealthAgent extends AbstractEntity implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-    }   
-    
+    }
+
 }

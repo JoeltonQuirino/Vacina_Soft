@@ -11,7 +11,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,6 +23,8 @@ import javax.persistence.TemporalType;
 @Table(name = "psf_user_tbl")
 public class PSFUser extends AbstractEntity implements Serializable {
 
+    
+    
     @Column(name = "user_name")
     private String userName;
 
@@ -66,12 +67,13 @@ public class PSFUser extends AbstractEntity implements Serializable {
     private int adressNumber;
 
     @Column(name = "adress_street")
-    @OneToMany(mappedBy = "psfUsers", targetEntity = Street.class)
+    @ManyToOne
+    @JoinColumn(name = "id_street", referencedColumnName = "id")
     private Street adressStreet;
 
     @Column(name = "health_agent")
     @ManyToOne
-    @JoinColumn(name = "id", table = "health_agent_tbl")
+    @JoinColumn(name = "id_agent", referencedColumnName = "id")
     private HealthAgent healthAgent;
     
     

@@ -12,6 +12,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -19,26 +20,25 @@ import javax.persistence.Table;
  * @author WitaloCarlos
  */
 @Entity
-@Table(name="street_tbl")
+@Table(name = "street_tbl")
 public class Street extends AbstractEntity implements Serializable {
 
     @Column(name = "district")
     private String district;
-    
+
     @Column(name = "name_street")
     private String nameStreet;
-    
+
     @Column(name = "region")
     private String region;
-    
+
     @Column(name = "postal_code")
     private String postalCode;
-    
+
     @Column(name = "country_code")
     private String countryCode;
-    
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_user", referencedColumnName = "id")
+
+    @OneToMany(mappedBy = "adressStreet", targetEntity = PSFUser.class)
     private Set<PSFUser> psfUsers;
 
     public String getDistrict() {
@@ -57,8 +57,8 @@ public class Street extends AbstractEntity implements Serializable {
         this.nameStreet = nameStreet;
     }
 
-    
     public String getRegion() {
+        
         return region;
     }
 
@@ -81,7 +81,5 @@ public class Street extends AbstractEntity implements Serializable {
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
-
-   
 
 }
