@@ -7,7 +7,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -25,8 +25,6 @@ import javax.persistence.TemporalType;
 @Table(name = "psf_user_tbl")
 public class PSFUser extends AbstractEntity implements Serializable {
 
-    
-    
     @Column(name = "user_name")
     private String userName;
 
@@ -77,12 +75,25 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_agent", referencedColumnName = "id")
     private HealthAgent healthAgent;
-    
-    @OneToMany (mappedBy = "psfUser", targetEntity = Administration.class)
-    private Set<Administration> administrations;
-    
-    
-    
+
+    @OneToMany(mappedBy = "psfUser", targetEntity = Administration.class)
+    private List<Administration> administrations;
+
+    public Street getAdressStreet() {
+        return adressStreet;
+    }
+
+    public void setAdressStreet(Street adressStreet) {
+        this.adressStreet = adressStreet;
+    }
+
+    public List<Administration> getAdministrations() {
+        return administrations;
+    }
+
+    public void setAdministrations(List<Administration> administrations) {
+        this.administrations = administrations;
+    }
 
     public HealthAgent getHealthAgent() {
         return healthAgent;
@@ -93,6 +104,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
     }
 
     public String getUserName() {
+
         return userName;
     }
 

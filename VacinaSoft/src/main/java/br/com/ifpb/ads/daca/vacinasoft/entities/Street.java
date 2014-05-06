@@ -6,12 +6,9 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.util.Set;
-import javax.persistence.CascadeType;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -39,7 +36,15 @@ public class Street extends AbstractEntity implements Serializable {
     private String countryCode;
 
     @OneToMany(mappedBy = "adressStreet", targetEntity = PSFUser.class)
-    private Set<PSFUser> psfUsers;
+    private List<PSFUser> psfUsers;
+
+    public List<PSFUser> getPsfUsers() {
+        return psfUsers;
+    }
+
+    public void setPsfUsers(List<PSFUser> psfUsers) {
+        this.psfUsers = psfUsers;
+    }
 
     public String getDistrict() {
         return district;
@@ -58,7 +63,7 @@ public class Street extends AbstractEntity implements Serializable {
     }
 
     public String getRegion() {
-        
+
         return region;
     }
 
