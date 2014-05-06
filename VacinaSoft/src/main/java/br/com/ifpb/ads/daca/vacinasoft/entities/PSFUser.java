@@ -7,10 +7,12 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -75,6 +77,9 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_agent", referencedColumnName = "id")
     private HealthAgent healthAgent;
+    
+    @OneToMany (mappedBy = "psfUser", targetEntity = Administration.class)
+    private Set<Administration> administrations;
     
     
     

@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -48,11 +50,12 @@ public class Administration extends AbstractEntity implements Serializable{
     private Date administrationDate;
     
     @Column (name = "lot_vaccine")
-    @OneToOne (mappedBy = "id_lot", targetEntity = LotVaccine.class)
+    @OneToOne (mappedBy = "lotId", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
    
     @Column (name = "psf_user")
-    @OneToOne (mappedBy = "id", targetEntity = PSFUser.class)
+    @ManyToOne 
+    @JoinColumn(name = "id_psf_user", referencedColumnName = "id")
     private PSFUser psfUser;
     
     @Column (name = "vaccinator")

@@ -8,6 +8,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -30,8 +31,8 @@ public class Vaccine extends AbstractEntity implements Serializable {
     private String nameVaccine;
     
     @Column (name = "lot_id")
-    @OneToMany(mappedBy = "lot_id", targetEntity = LotVaccine.class)
-    private List<LotVaccine> lots;
+    @OneToMany(mappedBy = "idVaccine", targetEntity = LotVaccine.class)
+    private Set<LotVaccine> lots;
 
     /**
      * @return the wayAdministration
@@ -64,14 +65,14 @@ public class Vaccine extends AbstractEntity implements Serializable {
     /**
      * @return the lots
      */
-    public List<LotVaccine> getLots() {
+    public Set<LotVaccine> getLots() {
         return lots;
     }
 
     /**
      * @param lots the lots to set
      */
-    public void setLots(List<LotVaccine> lots) {
+    public void setLots(Set<LotVaccine> lots) {
         this.lots = lots;
     }
 }

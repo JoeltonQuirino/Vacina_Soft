@@ -48,12 +48,12 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Column (name = "id_vaccine")
     @ManyToOne
-    @JoinColumn(name = "id_vaccine", table = "vaccine")
+    @JoinColumn(name = "id_vaccine", referencedColumnName = "id")
     private Vaccine idVaccine;
     
     @Column (name = "id_lot")
-    @OneToOne
-    @JoinColumn (name = "id_lot", referencedColumnName = "id_lot", table = "lot_vaccine")
+    @ManyToOne
+    @JoinColumn (name = "id_lot", referencedColumnName = "id")
     private Administration lotId;
         
     /**
