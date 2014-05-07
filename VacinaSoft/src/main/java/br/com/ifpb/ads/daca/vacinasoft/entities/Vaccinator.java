@@ -7,6 +7,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -34,10 +35,9 @@ public class Vaccinator extends AbstractEntity implements Serializable{
     @Column (name = "cpf_vaccinator", nullable = false, length = 11)
     private String cpfVaccinator;
     
-    @Column (name = "administration")
     @OneToMany
-    @JoinColumn (name = "coren_reccord", table = "vaccinator")
-    private Administration administration;
+    @JoinColumn (name = "id_admnistration", referencedColumnName = "id")
+    private List<Administration> administration;
 
     /**
      * @return the corenRecord

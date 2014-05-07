@@ -7,7 +7,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -27,7 +27,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "validity_date", nullable = false)
-    private Date validityDate;
+    private Calendar validityDate;
     
     @Column (name = "laboratory", nullable = false)
     private String laboratory;
@@ -37,7 +37,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal(javax.persistence.TemporalType.DATE)
     @Column (name = "receipt_date")
-    private Date receiptDate; // data de recebimento
+    private Calendar receiptDate; // data de recebimento
     
     @Column (name = "lot_code", nullable = false)
     private String lotCode;
@@ -86,14 +86,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the receiptDate
      */
-    public Date getReceiptDate() {
+    public Calendar getReceiptDate() {
         return receiptDate;
     }
 
     /**
      * @param receiptDate the receiptDate to set
      */
-    public void setReceiptDate(Date receiptDate) {
+    public void setReceiptDate(Calendar receiptDate) {
         this.receiptDate = receiptDate;
     }
 
@@ -142,14 +142,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the validityDate
      */
-    public Date getValidityDate() {
+    public Calendar getValidityDate() {
         return validityDate;
     }
 
     /**
      * @param validityDate the validityDate to set
      */
-    public void setValidityDate(Date validityDate) {
+    public void setValidityDate(Calendar validityDate) {
         this.validityDate = validityDate;
     }   
 }
