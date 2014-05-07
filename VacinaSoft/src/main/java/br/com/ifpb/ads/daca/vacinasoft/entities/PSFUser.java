@@ -66,13 +66,11 @@ public class PSFUser extends AbstractEntity implements Serializable {
 
     @Column(name = "adress_number")
     private int adressNumber;
-
-    @Column(name = "adress_street")
+                            
     @ManyToOne
     @JoinColumn(name = "id_street", referencedColumnName = "id")
     private Street adressStreet;
 
-    @Column(name = "health_agent")
     @ManyToOne
     @JoinColumn(name = "id_agent", referencedColumnName = "id")
     private HealthAgent healthAgent;

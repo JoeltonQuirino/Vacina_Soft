@@ -53,13 +53,12 @@ public class Administration extends AbstractEntity implements Serializable{
     @OneToOne (mappedBy = "lotId", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
    
-    @Column (name = "psf_user")
     @ManyToOne 
     @JoinColumn(name = "id_psf_user", referencedColumnName = "id")
     private PSFUser psfUser;
     
-    @Column (name = "vaccinator")
-    @OneToOne (mappedBy = "coren_record", targetEntity = Vaccinator.class)
+    @ManyToOne
+    @JoinColumn(name = "id_vaccinator", referencedColumnName = "id")
     private Vaccinator vaccinator;
 
     /**

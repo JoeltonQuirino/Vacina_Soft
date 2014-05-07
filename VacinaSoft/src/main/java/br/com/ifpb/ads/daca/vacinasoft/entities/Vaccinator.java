@@ -35,8 +35,7 @@ public class Vaccinator extends AbstractEntity implements Serializable{
     @Column (name = "cpf_vaccinator", nullable = false, length = 11)
     private String cpfVaccinator;
     
-    @OneToMany
-    @JoinColumn (name = "id_admnistration", referencedColumnName = "id")
+    @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)
     private List<Administration> administration;
 
     /**
