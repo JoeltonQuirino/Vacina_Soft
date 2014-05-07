@@ -7,7 +7,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -47,7 +47,7 @@ public class Administration extends AbstractEntity implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "administration_date", nullable = false)
-    private Date administrationDate;
+    private Calendar administrationDate;
     
     @Column (name = "lot_vaccine")
     @OneToOne (mappedBy = "lotId", targetEntity = LotVaccine.class)
@@ -121,14 +121,14 @@ public class Administration extends AbstractEntity implements Serializable{
     /**
      * @return the administrationDate
      */
-    public Date getAdministrationDate() {
+    public Calendar getAdministrationDate() {
         return administrationDate;
     }
 
     /**
      * @param administrationDate the administrationDate to set
      */
-    public void setAdministrationDate(Date administrationDate) {
+    public void setAdministrationDate(Calendar administrationDate) {
         this.administrationDate = administrationDate;
     }
     
