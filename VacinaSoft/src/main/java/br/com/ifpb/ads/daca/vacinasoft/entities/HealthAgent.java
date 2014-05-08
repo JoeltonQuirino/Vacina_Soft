@@ -36,7 +36,6 @@ public class HealthAgent extends AbstractEntity implements Serializable {
         this.PSFUsers = PSFUsers;
     }
 
-    @Column(name = "service_area")
     @OneToOne
     @JoinColumn(name = "id_area", referencedColumnName = "id")
     private Area serviceArea;
