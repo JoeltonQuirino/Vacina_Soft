@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
@@ -22,8 +21,8 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "administration_tbl")
-public class Administration extends AbstractEntity implements Serializable{
-    
+public class Administration extends AbstractEntity implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -32,34 +31,57 @@ public class Administration extends AbstractEntity implements Serializable{
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
-    
-    @Column (name = "strategy_administration", nullable = false)
+
+    @Column(name = "strategy_administration", nullable = false)
     private String strategyAdministration;
-    
-    @Column (name = "psf_administration")
+
+    @Column(name = "psf_administration")
     private String psfAdministration;
-    
-    @Column (name = "cnes")
+
+    @Column(name = "cnes")
     private String cnes;
-    
-    @Column (name = "vaccine_dose", nullable = false)
+
+    @Column(name = "vaccine_dose", nullable = false)
     private String vaccineDose;
-    
-    @Temporal (javax.persistence.TemporalType.DATE)
-    @Column (name = "administration_date", nullable = false)
+
+    @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(name = "administration_date", nullable = false)
     private Calendar administrationDate;
-    
-    @Column (name = "lot_vaccine")
-    @OneToOne (mappedBy = "lotId", targetEntity = LotVaccine.class)
+
+    @OneToOne(mappedBy = "lotId", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
-   
-    @ManyToOne 
+
+    @ManyToOne
     @JoinColumn(name = "id_psf_user", referencedColumnName = "id")
     private PSFUser psfUser;
-    
+
     @ManyToOne
     @JoinColumn(name = "id_vaccinator", referencedColumnName = "id")
     private Vaccinator vaccinator;
+
+    public LotVaccine getLotVaccine() {
+        return lotVaccine;
+    }
+
+    public void setLotVaccine(LotVaccine lotVaccine) {
+        this.lotVaccine = lotVaccine;
+    }
+
+    public PSFUser getPsfUser() {
+        return psfUser;
+    }
+
+    public void setPsfUser(PSFUser psfUser) {
+        this.psfUser = psfUser;
+    }
+
+    public Vaccinator getVaccinator() {
+        return vaccinator;
+    }
+
+    public void setVaccinator(Vaccinator vaccinator) {
+        this.vaccinator = vaccinator;
+    }
 
     /**
      * @return the strategyAdministration
@@ -130,5 +152,5 @@ public class Administration extends AbstractEntity implements Serializable{
     public void setAdministrationDate(Calendar administrationDate) {
         this.administrationDate = administrationDate;
     }
-    
+
 }

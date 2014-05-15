@@ -29,7 +29,6 @@ public class Vaccine extends AbstractEntity implements Serializable {
     @Column (name = "name_vaccine", nullable = false)
     private String nameVaccine;
     
-    @Column (name = "lot_id")
     @OneToMany(mappedBy = "idVaccine", targetEntity = LotVaccine.class)
     private List<LotVaccine> lots;
 

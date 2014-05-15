@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
@@ -21,22 +20,30 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "vaccinator_tbl")
-public class Vaccinator extends AbstractEntity implements Serializable{
-    
+public class Vaccinator extends AbstractEntity implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     
-    @Id
-    @Column (name = "coren_record", nullable = false)
+    @Column(name = "coren_record", nullable = false)
     private String corenRecord;
-    
-    @Column (name = "name_vaccinator", nullable = false, length = 100)
+
+    @Column(name = "name_vaccinator", nullable = false, length = 100)
     private String nameVaccinator;
-    
-    @Column (name = "cpf_vaccinator", nullable = false, length = 11)
+
+    @Column(name = "cpf_vaccinator", nullable = false, length = 11)
     private String cpfVaccinator;
-    
+
     @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)
-    private List<Administration> administration;
+    private List<Administration> administrations;
+
+    public List<Administration> getAdministrations() {
+        return administrations;
+    }
+
+    public void setAdministrations(List<Administration> administrations) {
+        this.administrations = administrations;
+    }
 
     /**
      * @return the corenRecord
@@ -78,5 +85,5 @@ public class Vaccinator extends AbstractEntity implements Serializable{
      */
     public void setCpfVaccinator(String cpfVaccinator) {
         this.cpfVaccinator = cpfVaccinator;
-    }   
+    }
 }
