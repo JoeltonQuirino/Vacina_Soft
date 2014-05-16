@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PSFUserCreateDlg" widgetVar="PSFUserCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePSFUserTitle}">
+            <h:form id="PSFUserCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{pSFUserController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressStreet}" for="adressStreet" />
+                        <p:selectOneMenu id="adressStreet" value="#{pSFUserController.selected.adressStreet}" >
+                            <f:selectItems value="#{streetController.itemsAvailableSelectOne}"
+                                           var="adressStreetItem"
+                                           itemValue="#{adressStreetItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_healthAgent}" for="healthAgent" />
+                        <p:selectOneMenu id="healthAgent" value="#{pSFUserController.selected.healthAgent}" >
+                            <f:selectItems value="#{healthAgentController.itemsAvailableSelectOne}"
+                                           var="healthAgentItem"
+                                           itemValue="#{healthAgentItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_userName}" for="userName" />
+                        <p:inputText id="userName" value="#{pSFUserController.selected.userName}" title="#{bundle.CreatePSFUserTitle_userName}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_motherName}" for="motherName" />
+                        <p:inputText id="motherName" value="#{pSFUserController.selected.motherName}" title="#{bundle.CreatePSFUserTitle_motherName}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_fatherName}" for="fatherName" />
+                        <p:inputText id="fatherName" value="#{pSFUserController.selected.fatherName}" title="#{bundle.CreatePSFUserTitle_fatherName}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_ethnicity}" for="ethnicity" />
+                        <p:inputText id="ethnicity" value="#{pSFUserController.selected.ethnicity}" title="#{bundle.CreatePSFUserTitle_ethnicity}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressComplement}" for="adressComplement" />
+                        <p:inputText id="adressComplement" value="#{pSFUserController.selected.adressComplement}" title="#{bundle.CreatePSFUserTitle_adressComplement}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_cpf}" for="cpf" />
+                        <p:inputText id="cpf" value="#{pSFUserController.selected.cpf}" title="#{bundle.CreatePSFUserTitle_cpf}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_rg}" for="rg" />
+                        <p:inputText id="rg" value="#{pSFUserController.selected.rg}" title="#{bundle.CreatePSFUserTitle_rg}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_susCard}" for="susCard" />
+                        <p:inputText id="susCard" value="#{pSFUserController.selected.susCard}" title="#{bundle.CreatePSFUserTitle_susCard}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_responsibleForCompleting}" for="responsibleForCompleting" />
+                        <p:inputText id="responsibleForCompleting" value="#{pSFUserController.selected.responsibleForCompleting}" title="#{bundle.CreatePSFUserTitle_responsibleForCompleting}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_birthDate}" for="birthDate" />
+                        <p:inputText id="birthDate" value="#{pSFUserController.selected.birthDate}" title="#{bundle.CreatePSFUserTitle_birthDate}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_registrationDate}" for="registrationDate" />
+                        <p:inputText id="registrationDate" value="#{pSFUserController.selected.registrationDate}" title="#{bundle.CreatePSFUserTitle_registrationDate}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{pSFUserController.selected.gender}" title="#{bundle.CreatePSFUserTitle_gender}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressNumber}" for="adressNumber" />
+                        <p:inputText id="adressNumber" value="#{pSFUserController.selected.adressNumber}" title="#{bundle.CreatePSFUserTitle_adressNumber}" />
+                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{pSFUserController.selected.id}" title="#{bundle.CreatePSFUserTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{pSFUserController.create}" value="#{bundle.Save}" update="display,:PSFUserListForm:datalist,:growl" oncomplete="handleSubmit(args,'PSFUserCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PSFUserCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

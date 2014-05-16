@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StreetCreateDlg" widgetVar="StreetCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateStreetTitle}">
+            <h:form id="StreetCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{streetController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_district}" for="district" />
+                        <p:inputText id="district" value="#{streetController.selected.district}" title="#{bundle.CreateStreetTitle_district}" />
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_nameStreet}" for="nameStreet" />
+                        <p:inputText id="nameStreet" value="#{streetController.selected.nameStreet}" title="#{bundle.CreateStreetTitle_nameStreet}" />
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_region}" for="region" />
+                        <p:inputText id="region" value="#{streetController.selected.region}" title="#{bundle.CreateStreetTitle_region}" />
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_postalCode}" for="postalCode" />
+                        <p:inputText id="postalCode" value="#{streetController.selected.postalCode}" title="#{bundle.CreateStreetTitle_postalCode}" />
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_countryCode}" for="countryCode" />
+                        <p:inputText id="countryCode" value="#{streetController.selected.countryCode}" title="#{bundle.CreateStreetTitle_countryCode}" />
+                        <p:outputLabel value="#{bundle.CreateStreetLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{streetController.selected.id}" title="#{bundle.CreateStreetTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{streetController.create}" value="#{bundle.Save}" update="display,:StreetListForm:datalist,:growl" oncomplete="handleSubmit(args,'StreetCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="StreetCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

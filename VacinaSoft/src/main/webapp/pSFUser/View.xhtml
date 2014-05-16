@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PSFUserViewDlg" widgetVar="PSFUserViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPSFUserTitle}">
+            <h:form id="PSFUserViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{pSFUserController.selected != null}">
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_adressStreet}"/>
+                        <h:outputText value="#{pSFUserController.selected.adressStreet}" title="#{bundle.ViewPSFUserTitle_adressStreet}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_healthAgent}"/>
+                        <h:outputText value="#{pSFUserController.selected.healthAgent}" title="#{bundle.ViewPSFUserTitle_healthAgent}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_userName}"/>
+                        <h:outputText value="#{pSFUserController.selected.userName}" title="#{bundle.ViewPSFUserTitle_userName}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_motherName}"/>
+                        <h:outputText value="#{pSFUserController.selected.motherName}" title="#{bundle.ViewPSFUserTitle_motherName}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_fatherName}"/>
+                        <h:outputText value="#{pSFUserController.selected.fatherName}" title="#{bundle.ViewPSFUserTitle_fatherName}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_ethnicity}"/>
+                        <h:outputText value="#{pSFUserController.selected.ethnicity}" title="#{bundle.ViewPSFUserTitle_ethnicity}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_adressComplement}"/>
+                        <h:outputText value="#{pSFUserController.selected.adressComplement}" title="#{bundle.ViewPSFUserTitle_adressComplement}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_cpf}"/>
+                        <h:outputText value="#{pSFUserController.selected.cpf}" title="#{bundle.ViewPSFUserTitle_cpf}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_rg}"/>
+                        <h:outputText value="#{pSFUserController.selected.rg}" title="#{bundle.ViewPSFUserTitle_rg}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_susCard}"/>
+                        <h:outputText value="#{pSFUserController.selected.susCard}" title="#{bundle.ViewPSFUserTitle_susCard}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_responsibleForCompleting}"/>
+                        <h:outputText value="#{pSFUserController.selected.responsibleForCompleting}" title="#{bundle.ViewPSFUserTitle_responsibleForCompleting}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_birthDate}"/>
+                        <h:outputText value="#{pSFUserController.selected.birthDate}" title="#{bundle.ViewPSFUserTitle_birthDate}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_registrationDate}"/>
+                        <h:outputText value="#{pSFUserController.selected.registrationDate}" title="#{bundle.ViewPSFUserTitle_registrationDate}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_gender}"/>
+                        <h:outputText value="#{pSFUserController.selected.gender}" title="#{bundle.ViewPSFUserTitle_gender}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_adressNumber}"/>
+                        <h:outputText value="#{pSFUserController.selected.adressNumber}" title="#{bundle.ViewPSFUserTitle_adressNumber}"/>
+                        <h:outputText value="#{bundle.ViewPSFUserLabel_id}"/>
+                        <h:outputText value="#{pSFUserController.selected.id}" title="#{bundle.ViewPSFUserTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="PSFUserViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

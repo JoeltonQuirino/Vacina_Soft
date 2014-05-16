@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="LotVaccineEditDlg" widgetVar="LotVaccineEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditLotVaccineTitle}">
+            <h:form id="LotVaccineEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{lotVaccineController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_laboratory}" for="laboratory" />
+                        <p:inputText id="laboratory" value="#{lotVaccineController.selected.laboratory}" title="#{bundle.EditLotVaccineTitle_laboratory}" required="true" requiredMessage="#{bundle.EditLotVaccineRequiredMessage_laboratory}"/>
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_amountAmpoule}" for="amountAmpoule" />
+                        <p:inputText id="amountAmpoule" value="#{lotVaccineController.selected.amountAmpoule}" title="#{bundle.EditLotVaccineTitle_amountAmpoule}" />
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_receiptDate}" for="receiptDate" />
+                        <p:inputText id="receiptDate" value="#{lotVaccineController.selected.receiptDate}" title="#{bundle.EditLotVaccineTitle_receiptDate}" />
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_lotCode}" for="lotCode" />
+                        <p:inputText id="lotCode" value="#{lotVaccineController.selected.lotCode}" title="#{bundle.EditLotVaccineTitle_lotCode}" required="true" requiredMessage="#{bundle.EditLotVaccineRequiredMessage_lotCode}"/>
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_amountDose}" for="amountDose" />
+                        <p:inputText id="amountDose" value="#{lotVaccineController.selected.amountDose}" title="#{bundle.EditLotVaccineTitle_amountDose}" />
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_vaccine}" for="vaccine" />
+                        <p:inputText id="vaccine" value="#{lotVaccineController.selected.vaccine}" title="#{bundle.EditLotVaccineTitle_vaccine}" />
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_validityDate}" for="validityDate" />
+                        <p:inputText id="validityDate" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.EditLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.EditLotVaccineRequiredMessage_validityDate}"/>
+                        <p:outputLabel value="#{bundle.EditLotVaccineLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{lotVaccineController.selected.id}" title="#{bundle.EditLotVaccineTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{lotVaccineController.update}" value="#{bundle.Save}" update="display,:LotVaccineListForm:datalist,:growl" oncomplete="handleSubmit(args, 'LotVaccineEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="LotVaccineEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
