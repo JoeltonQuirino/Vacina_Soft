@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Table(name = "health_agent_tbl")
 public class HealthAgent extends AbstractEntity implements Serializable {
 
-    @Column(name = "name")
+    @Column(name = "name", updatable = false)
     private String name;
 
     @OneToMany(mappedBy = "healthAgent", targetEntity = PSFUser.class)

@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "area_tbl")
 public class Area extends AbstractEntity implements Serializable{
     
-    @Column(name = "description")
+    @Column(name = "description", nullable = true, updatable = true)
     private String description;
     
     @OneToOne(mappedBy = "serviceArea", targetEntity = HealthAgent.class)

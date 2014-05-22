@@ -23,10 +23,10 @@ public class Vaccine extends AbstractEntity implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
-    @Column (name = "way_administration", nullable = false)
+    @Column (name = "way_administration", nullable = false, updatable = false)
     private String wayAdministration;
     
-    @Column (name = "name_vaccine", nullable = false)
+    @Column (name = "name_vaccine", nullable = false, updatable = false)
     private String nameVaccine;
     
     @OneToMany(mappedBy = "idVaccine", targetEntity = LotVaccine.class)

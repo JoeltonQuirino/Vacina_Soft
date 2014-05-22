@@ -32,31 +32,31 @@ public class Administration extends AbstractEntity implements Serializable {
         return serialVersionUID;
     }
 
-    @Column(name = "strategy_administration", nullable = false)
+    @Column(name = "strategy_administration", nullable = false, updatable = false )
     private String strategyAdministration;
 
-    @Column(name = "psf_administration")
+    @Column(name = "psf_administration", nullable = false, updatable = false)
     private String psfAdministration;
 
-    @Column(name = "cnes")
+    @Column(name = "cnes", nullable = false, updatable = false)
     private String cnes;
 
-    @Column(name = "vaccine_dose", nullable = false)
+    @Column(name = "vaccine_dose", nullable = false, updatable = false)
     private String vaccineDose;
 
     @Temporal(javax.persistence.TemporalType.DATE)
-    @Column(name = "administration_date", nullable = false)
+    @Column(name = "administration_date", nullable = false, updatable = false)
     private Calendar administrationDate;
 
     @OneToOne(mappedBy = "lotId", targetEntity = LotVaccine.class)
     private LotVaccine lotVaccine;
 
-    @ManyToOne
-    @JoinColumn(name = "id_psf_user", referencedColumnName = "id")
+    @ManyToOne()
+    @JoinColumn(name = "id_psf_user", referencedColumnName = "id", nullable = false)
     private PSFUser psfUser;
 
     @ManyToOne
-    @JoinColumn(name = "id_vaccinator", referencedColumnName = "id")
+    @JoinColumn(name = "id_vaccinator", referencedColumnName = "id", nullable = false, updatable = false)
     private Vaccinator vaccinator;
 
     public LotVaccine getLotVaccine() {

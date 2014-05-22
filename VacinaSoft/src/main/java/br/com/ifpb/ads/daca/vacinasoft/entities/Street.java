@@ -20,19 +20,19 @@ import javax.persistence.Table;
 @Table(name = "street_tbl")
 public class Street extends AbstractEntity implements Serializable {
 
-    @Column(name = "district")
+    @Column(name = "district", nullable = true, updatable = true)
     private String district;
 
-    @Column(name = "name_street")
+    @Column(name = "name_street", nullable = true, updatable = true)
     private String nameStreet;
 
-    @Column(name = "region")
+    @Column(name = "region", nullable = false, updatable = true)
     private String region;
 
-    @Column(name = "postal_code")
+    @Column(name = "postal_code", nullable = true, updatable = true)
     private String postalCode;
 
-    @Column(name = "country_code")
+    @Column(name = "country_code", nullable = false, updatable = true)
     private String countryCode;
 
     @OneToMany(mappedBy = "adressStreet", targetEntity = PSFUser.class)

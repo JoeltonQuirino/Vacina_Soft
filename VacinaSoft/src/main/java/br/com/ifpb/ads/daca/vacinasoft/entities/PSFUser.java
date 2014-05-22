@@ -26,53 +26,53 @@ import javax.persistence.TemporalType;
 @Table(name = "psf_user_tbl")
 public class PSFUser extends AbstractEntity implements Serializable {
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false, updatable = false)
     private String userName;
 
-    @Column(name = "mother_name")
+    @Column(name = "mother_name", updatable = false)
     private String motherName;
 
-    @Column(name = "father_name")
+    @Column(name = "father_name", updatable = false)
     private String fatherName;
 
-    @Column(name = "ethnicity")
+    @Column(name = "ethnicity", nullable = false, updatable = false)
     private String ethnicity;
 
-    @Column(name = "adress_complement")
+    @Column(name = "adress_complement", nullable = false)
     private String adressComplement;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", unique = true, updatable = false, length = 11)
     private String cpf;
 
-    @Column(name = "rg")
+    @Column(name = "rg", unique = true, updatable = false)
     private String rg;
 
-    @Column(name = "sus_card")
+    @Column(name = "sus_card", unique = true, updatable = false)
     private String susCard;
 
-    @Column(name = "responsible_for_completing")
+    @Column(name = "responsible_for_completing", nullable = false, updatable = false)
     private String responsibleForCompleting;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "birth_date")
+    @Column(name = "birth_date", nullable = false, updatable = false)
     private Calendar birthDate;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "registration_date")
+    @Column(name = "registration_date", nullable = false, updatable = false)
     private Calendar registrationDate;
 
-    @Column(name = "gender")
+    @Column(name = "gender", nullable = false, updatable = false)
     private char gender;
 
-    @Column(name = "adress_number")
+    @Column(name = "adress_number", updatable = true)
     private int adressNumber;
                             
     @ManyToOne
-    @JoinColumn(name = "id_street", referencedColumnName = "id")
+    @JoinColumn(name = "id_street", referencedColumnName = "id", nullable = false)
     private Street adressStreet;
 
     @ManyToOne
-    @JoinColumn(name = "id_agent", referencedColumnName = "id")
+    @JoinColumn(name = "id_agent", referencedColumnName = "id", nullable = false, updatable = false)
     private HealthAgent healthAgent;
 
     @OneToMany(mappedBy = "psfUser", targetEntity = Administration.class)

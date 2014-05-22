@@ -25,13 +25,13 @@ public class Vaccinator extends AbstractEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     
-    @Column(name = "coren_record", nullable = false)
+    @Column(name = "coren_record", nullable = false, updatable = true, unique = true)
     private String corenRecord;
 
-    @Column(name = "name_vaccinator", nullable = false, length = 100)
+    @Column(name = "name_vaccinator", nullable = false, length = 100, updatable = false)
     private String nameVaccinator;
 
-    @Column(name = "cpf_vaccinator", nullable = false, length = 11)
+    @Column(name = "cpf_vaccinator", nullable = false, length = 11, updatable = false)
     private String cpfVaccinator;
 
     @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)

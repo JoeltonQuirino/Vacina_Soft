@@ -26,31 +26,31 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Temporal (javax.persistence.TemporalType.DATE)
-    @Column (name = "validity_date", nullable = false)
+    @Column (name = "validity_date", nullable = false, updatable = false)
     private Calendar validityDate;
     
-    @Column (name = "laboratory", nullable = false)
+    @Column (name = "laboratory", nullable = false, updatable = false)
     private String laboratory;
     
     @Column (name = "amount_ampoule")
     private int amountAmpoule; // quantidade de ampolas
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    @Column (name = "receipt_date")
+    @Column (name = "receipt_date", updatable = false)
     private Calendar receiptDate; // data de recebimento
     
-    @Column (name = "lot_code", nullable = false)
+    @Column (name = "lot_code", nullable = false, updatable = false)
     private String lotCode;
     
-    @Column (name = "amount_dose")
+    @Column (name = "amount_dose", nullable = false, updatable = false)
     private int amountDose; // quantidade de doses
     
     @ManyToOne
-    @JoinColumn(name = "id_vaccine", referencedColumnName = "id")
+    @JoinColumn(name = "id_vaccine", referencedColumnName = "id", nullable = false, updatable = false)
     private Vaccine idVaccine;
     
     @ManyToOne
-    @JoinColumn (name = "id_lot", referencedColumnName = "id")
+    @JoinColumn (name = "id_lot", referencedColumnName = "id", nullable = false, updatable = false)
     private Administration lotId;
         
     /**
