@@ -32,13 +32,13 @@ public class Administration extends AbstractEntity implements Serializable {
         return serialVersionUID;
     }
 
-    @Column(name = "strategy_administration", nullable = false, updatable = false )
+    @Column(name = "strategy_administration", nullable = false, updatable = false)
     private String strategyAdministration;
 
     @Column(name = "psf_administration", nullable = false, updatable = false)
     private String psfAdministration;
 
-    @Column(name = "cnes", nullable = false, updatable = false)
+    @Column(name = "cnes", nullable = true, updatable = false)
     private String cnes;
 
     @Column(name = "vaccine_dose", nullable = false, updatable = false)
