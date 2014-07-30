@@ -6,6 +6,7 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.dao.session;
 
+
 import java.util.List;
 import javax.persistence.EntityManager;
 
@@ -13,15 +14,15 @@ import javax.persistence.EntityManager;
  *
  * @author WitaloCarlos
  */
-public abstract class AbstractFacade<T> {
+public abstract class AbstractGenericDao<T>{
     private Class<T> entityClass;
 
-    public AbstractFacade(Class<T> entityClass) {
+    public AbstractGenericDao(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 
     protected abstract EntityManager getEntityManager();
-
+    
     public void create(T entity) {
         getEntityManager().persist(entity);
     }

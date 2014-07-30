@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author WitaloCarlos
  */
 @Stateless
-public class HealthAgentFacade extends AbstractFacade<HealthAgent> {
+public class HealthAgentFacade extends AbstractGenericDao<HealthAgent> {
     @PersistenceContext(unitName = "br.com.ifpb.ads.daca_VacinaSoft_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
