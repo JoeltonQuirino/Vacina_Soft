@@ -3,7 +3,7 @@ package br.com.ifpb.ads.daca.vacinasoft.jsf;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Vaccine;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccineFacade;
+import br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccineDao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class VaccineController implements Serializable {
 
     @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccineFacade ejbFacade;
+    private br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccineDao ejbFacade;
     private List<Vaccine> items = null;
     private Vaccine selected;
 
@@ -45,7 +45,7 @@ public class VaccineController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private VaccineFacade getFacade() {
+    private VaccineDao getFacade() {
         return ejbFacade;
     }
 

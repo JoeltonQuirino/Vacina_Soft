@@ -8,17 +8,17 @@ import br.com.ifpb.ads.daca.vacinasoft.dao.session.*;
 
 /**
  *
- * @author Hugo
+ * @author Hugo Correia & Mauricio Aguiar
  */
 public interface DaoInterface {
     
-    public AdministrationFacade createAdministrationFacade();
-    public AreaFacade createAreaFacade ();
-    public HealthAgentFacade createHealthAgentFacade();
-    public LotVaccineFacade createLotVaccineFacade();
-    public PSFUserFacade createPSFUserFacade();
-    public StreetFacade createStreetFacade();
-    public VaccinatorFacade createVaccinatorFacade();
-    public VaccineFacade cretateVaccineFacade();
+    public AdministrationDao createAdministrationFacade();
+    public AreaDao createAreaFacade ();
+    public HealthAgentDao createHealthAgentFacade();
+    public LotVaccineDao createLotVaccineFacade();
+    public PSFUserDao createPSFUserFacade();
+    public StreetDao createStreetFacade();
+    public VaccinatorDao createVaccinatorFacade();
+    public VaccineDao cretateVaccineFacade();
    
 }

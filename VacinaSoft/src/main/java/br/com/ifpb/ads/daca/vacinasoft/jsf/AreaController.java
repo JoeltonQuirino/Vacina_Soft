@@ -3,7 +3,7 @@ package br.com.ifpb.ads.daca.vacinasoft.jsf;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Area;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.AreaFacade;
+import br.com.ifpb.ads.daca.vacinasoft.dao.session.AreaDao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class AreaController implements Serializable {
 
     @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.AreaFacade ejbFacade;
+    private br.com.ifpb.ads.daca.vacinasoft.dao.session.AreaDao ejbFacade;
     private List<Area> items = null;
     private Area selected;
 
@@ -45,7 +45,7 @@ public class AreaController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AreaFacade getFacade() {
+    private AreaDao getFacade() {
         return ejbFacade;
     }
 

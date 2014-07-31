@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author WitaloCarlos
  */
 @Stateless
-public class VaccinatorFacade extends AbstractGenericDao<Vaccinator> {
+public class VaccinatorDao extends AbstractGenericDao<Vaccinator> {
     @PersistenceContext(unitName = "br.com.ifpb.ads.daca_VacinaSoft_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -25,7 +25,7 @@ public class VaccinatorFacade extends AbstractGenericDao<Vaccinator> {
         return em;
     }
 
-    public VaccinatorFacade() {
+    public VaccinatorDao() {
         super(Vaccinator.class);
     }
     

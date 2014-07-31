@@ -1,39 +1,63 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
-        <br />
-        <h:link outcome="/administration/List" value="Show All Administration Items"/>
-        <br />
-        <h:link outcome="/area/List" value="Show All Area Items"/>
-        <br />
-        <h:link outcome="/healthAgent/List" value="Show All HealthAgent Items"/>
-        <br />
-        <h:link outcome="/lotVaccine/List" value="Show All LotVaccine Items"/>
-        <br />
-        <h:link outcome="/pSFUser/List" value="Show All PSFUser Items"/>
-        <br />
-        <h:link outcome="/street/List" value="Show All Street Items"/>
-        <br />
-        <h:link outcome="/vaccinator/List" value="Show All Vaccinator Items"/>
-        <br />
-        <h:link outcome="/vaccine/List" value="Show All Vaccine Items"/>
-    </h:body>
-
-
-
-
-
-
-
+        
+        <p:layout style="min-width:600px;min-height:800px;">
+            
+            <p:layoutUnit position="north" resizable="true" size="100" minSize="40" maxSize="200">
+                <h1><p align="center">Hello from Facelets</p></h1>
+            </p:layoutUnit> 
+            <p:layoutUnit position="west" size="200" minSize="40" maxSize="200">
+                        <br />
+                    <p:accordionPanel dynamic="true" cache="true">
+                        <p:tab title="Show All">
+                            <h:link outcome="/administration/List" value="Administration"/>
+                            <br />                        
+                            <h:link outcome="/area/List" value="Area"/>  
+                            <br />
+                            <h:link outcome="/healthAgent/List" value="Health Agent"/>
+                            <br/>
+                            <h:link outcome="/lotVaccine/List" value="LotVaccine"/>
+                            <br/>
+                            <h:link outcome="/pSFUser/List" value="PSF User"/>
+                            <br/>
+                            <h:link outcome="/street/List" value="Street"/>
+                            <br/>
+                            <h:link outcome="/vaccinator/List" value="Vaccinator"/>
+                            <br/>
+                            <h:link outcome="/vaccine/List" value="Vaccine"/>       
+                        </p:tab>
+                                             
+                        <p:tab title="Vaccine's Lot">
+                        </p:tab>
+                        <br />
+                        <p:tab title="PSF User">   
+                        </p:tab>
+                        <br />
+                        <p:tab title="Street"> 
+                        </p:tab>
+                        <br />
+                        <p:tab title="Vaccinator">
+                        </p:tab>
+                        <br />
+                        <p:tab title="Vaccine">
+                        </p:tab>
+                    </p:accordionPanel>
+                 </p:layoutUnit>
+            <p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
+            </p:layoutUnit>
+            <p:layoutUnit position="south" resizable="true" size="100" minSize="40" maxSize="200">
+                <h1><p align="center">Bye from Facelets</p></h1>
+            </p:layoutUnit> 
+        </p:layout>
+</h:body>
 
 </html>
 

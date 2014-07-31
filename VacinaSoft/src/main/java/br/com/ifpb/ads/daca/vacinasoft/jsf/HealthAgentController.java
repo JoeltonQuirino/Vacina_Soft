@@ -3,7 +3,7 @@ package br.com.ifpb.ads.daca.vacinasoft.jsf;
 import br.com.ifpb.ads.daca.vacinasoft.entities.HealthAgent;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.HealthAgentFacade;
+import br.com.ifpb.ads.daca.vacinasoft.dao.session.HealthAgentDao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class HealthAgentController implements Serializable {
 
     @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.HealthAgentFacade ejbFacade;
+    private br.com.ifpb.ads.daca.vacinasoft.dao.session.HealthAgentDao ejbFacade;
     private List<HealthAgent> items = null;
     private HealthAgent selected;
 
@@ -45,7 +45,7 @@ public class HealthAgentController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private HealthAgentFacade getFacade() {
+    private HealthAgentDao getFacade() {
         return ejbFacade;
     }
 

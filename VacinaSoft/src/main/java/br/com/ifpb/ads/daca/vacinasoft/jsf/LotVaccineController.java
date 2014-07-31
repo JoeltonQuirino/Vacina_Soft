@@ -3,7 +3,7 @@ package br.com.ifpb.ads.daca.vacinasoft.jsf;
 import br.com.ifpb.ads.daca.vacinasoft.entities.LotVaccine;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.LotVaccineFacade;
+import br.com.ifpb.ads.daca.vacinasoft.dao.session.LotVaccineDao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class LotVaccineController implements Serializable {
 
     @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.LotVaccineFacade ejbFacade;
+    private br.com.ifpb.ads.daca.vacinasoft.dao.session.LotVaccineDao ejbFacade;
     private List<LotVaccine> items = null;
     private LotVaccine selected;
 
@@ -45,7 +45,7 @@ public class LotVaccineController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private LotVaccineFacade getFacade() {
+    private LotVaccineDao getFacade() {
         return ejbFacade;
     }
 

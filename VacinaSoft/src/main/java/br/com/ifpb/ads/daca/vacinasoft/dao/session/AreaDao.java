@@ -6,7 +6,7 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.dao.session;
 
-import br.com.ifpb.ads.daca.vacinasoft.entities.Vaccine;
+import br.com.ifpb.ads.daca.vacinasoft.entities.Area;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author WitaloCarlos
  */
 @Stateless
-public class VaccineFacade extends AbstractGenericDao<Vaccine> {
+public class AreaDao extends AbstractGenericDao<Area> {
     @PersistenceContext(unitName = "br.com.ifpb.ads.daca_VacinaSoft_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
@@ -25,8 +25,8 @@ public class VaccineFacade extends AbstractGenericDao<Vaccine> {
         return em;
     }
 
-    public VaccineFacade() {
-        super(Vaccine.class);
+    public AreaDao() {
+        super(Area.class);
     }
     
 }
