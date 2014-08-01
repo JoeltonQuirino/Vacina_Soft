@@ -8,7 +8,7 @@
         <title>Facelet Title</title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
-    <h:body>
+    <h:body> 
         
         <p:layout style="min-width:600px;min-height:800px;">
             
@@ -19,21 +19,23 @@
                         <br />
                     <p:accordionPanel dynamic="true" cache="true">
                         <p:tab title="Show All">
-                            <h:link outcome="/administration/Page" value="Administration"/>
+                            <ul>
+                                <li><h:link outcome="/administration/Page" value="Administration"/></li>
                             <br />                        
-                            <h:link outcome="/area/Page" value="Area"/>  
+                                <li><h:link outcome="/area/Page" value="Area"/></li>  
                             <br />
-                            <h:link outcome="/healthAgent/Page" value="Health Agent"/>
+                                <li><h:link outcome="/healthAgent/Page" value="Health Agent"/></li>
                             <br/>
-                            <h:link outcome="/lotVaccine/Page" value="LotVaccine"/>
+                                <li><h:link outcome="/lotVaccine/Page" value="LotVaccine"/></li>
                             <br/>
-                            <h:link outcome="/pSFUser/Page" value="PSF User"/>
+                                <li><h:link outcome="/pSFUser/Page" value="PSF User"/></li>
                             <br/>
-                            <h:link outcome="/street/Page" value="Street"/>
+                                <li><h:link outcome="/street/Page" value="Street"/></li>
                             <br/>
-                            <h:link outcome="/vaccinator/Page" value="Vaccinator"/>
+                                <li><h:link outcome="/vaccinator/Page" value="Vaccinator"/></li>
                             <br/>
-                            <h:link outcome="/vaccine/Page" value="Vaccine"/>       
+                                <li><h:link outcome="/vaccine/Page" value="Vaccine"/></li>   
+                            </ul>
                         </p:tab>
                                              
                         <p:tab title="Vaccine's Lot">
@@ -53,6 +55,7 @@
                     </p:accordionPanel>
                  </p:layoutUnit>
             <p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
+                <ui:include src="List.xhtml"/>
             </p:layoutUnit>
             <p:layoutUnit position="south" resizable="true" size="100" minSize="40" maxSize="200">
                 <h1><p align="center">Bye from Facelets</p></h1>
@@ -61,4 +64,3 @@
 </h:body>
 
 </html>
-
