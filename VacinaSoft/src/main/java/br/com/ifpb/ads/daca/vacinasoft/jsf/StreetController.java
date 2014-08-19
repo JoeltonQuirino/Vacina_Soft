@@ -1,5 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.StreetDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Street;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -18,13 +19,14 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 
 @Named("streetController")
 @SessionScoped
 public class StreetController implements Serializable {
 
-    @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.StreetDao ejbFacade;
+    @Inject
+    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.StreetDaoInterface ejbFacade;
     private List<Street> items = null;
     private Street selected;
 
@@ -45,7 +47,7 @@ public class StreetController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private StreetDao getFacade() {
+    private StreetDaoInterface getFacade() {
         return ejbFacade;
     }
 

@@ -1,5 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AreaDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Area;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -18,13 +19,14 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 
 @Named("areaController")
 @SessionScoped
 public class AreaController implements Serializable {
 
-    @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.AreaDao ejbFacade;
+    @Inject
+    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AreaDaoInterface ejbFacade;
     private List<Area> items = null;
     private Area selected;
 
@@ -45,7 +47,7 @@ public class AreaController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AreaDao getFacade() {
+    private AreaDaoInterface getFacade() {
         return ejbFacade;
     }
 

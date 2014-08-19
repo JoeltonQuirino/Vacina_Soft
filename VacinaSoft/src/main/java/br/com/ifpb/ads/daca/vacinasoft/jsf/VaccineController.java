@@ -1,5 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.VaccineDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Vaccine;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -18,13 +19,14 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 
 @Named("vaccineController")
 @SessionScoped
 public class VaccineController implements Serializable {
 
-    @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccineDao ejbFacade;
+    @Inject
+    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.VaccineDaoInterface ejbFacade;
     private List<Vaccine> items = null;
     private Vaccine selected;
 
@@ -45,7 +47,7 @@ public class VaccineController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private VaccineDao getFacade() {
+    private VaccineDaoInterface getFacade() {
         return ejbFacade;
     }
 

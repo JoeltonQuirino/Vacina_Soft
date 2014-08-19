@@ -6,6 +6,7 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.dao.session;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.HealthAgentDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.HealthAgent;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,7 +17,7 @@ import javax.persistence.PersistenceContext;
  * @author WitaloCarlos
  */
 @Stateless
-public class HealthAgentDao extends AbstractGenericDao<HealthAgent> {
+public class HealthAgentDao extends AbstractGenericDao<HealthAgent> implements HealthAgentDaoInterface {
     @PersistenceContext(unitName = "br.com.ifpb.ads.daca_VacinaSoft_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 

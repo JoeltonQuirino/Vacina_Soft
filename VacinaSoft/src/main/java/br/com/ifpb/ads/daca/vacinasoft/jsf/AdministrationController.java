@@ -1,5 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AdministrationDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.dao.session.AdministrationDao;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Administration;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
@@ -16,14 +17,15 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named("administrationController")
 @SessionScoped
 public class AdministrationController implements Serializable {
 
-    @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.AdministrationDao ejbFacade;
+    @Inject
+    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AdministrationDaoInterface ejbFacade;
     private List<Administration> items = null;
     private Administration selected;
 
@@ -44,7 +46,7 @@ public class AdministrationController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AdministrationDao getFacade() {
+    private AdministrationDaoInterface getFacade() {
         return ejbFacade;
     }
 

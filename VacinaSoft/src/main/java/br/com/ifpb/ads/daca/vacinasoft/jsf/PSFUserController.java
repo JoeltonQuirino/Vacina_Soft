@@ -1,5 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
+import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.PSFUserDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.PSFUser;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -18,13 +19,14 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import javax.inject.Inject;
 
 @Named("pSFUserController")
 @SessionScoped
 public class PSFUserController implements Serializable {
 
-    @EJB
-    private br.com.ifpb.ads.daca.vacinasoft.dao.session.PSFUserDao ejbFacade;
+    @Inject
+    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.PSFUserDaoInterface ejbFacade;
     private List<PSFUser> items = null;
     private PSFUser selected;
 
@@ -45,7 +47,7 @@ public class PSFUserController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private PSFUserDao getFacade() {
+    private PSFUserDaoInterface getFacade() {
         return ejbFacade;
     }
 

@@ -18,7 +18,7 @@
                 <p:panel header="#{bundle.ListAreaTitle}">
                     <p:dataTable id="datalist" value="#{areaController.items}" var="item"
                                  selectionMode="single" selection="#{areaController.selected}"
-                                 paginator="true"
+                                 paginator="false"
                                  rowKey="#{item.id}"
                                  rows="10"
                                  rowsPerPageTemplate="10,20,30,40,50"

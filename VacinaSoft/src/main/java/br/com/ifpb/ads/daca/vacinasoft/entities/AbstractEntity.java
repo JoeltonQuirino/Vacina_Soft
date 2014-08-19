@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package br.com.ifpb.ads.daca.vacinasoft.entities;
-
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
