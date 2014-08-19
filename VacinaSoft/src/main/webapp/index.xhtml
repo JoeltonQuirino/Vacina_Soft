@@ -5,57 +5,52 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        <title>Facelet Title</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <title><ui:insert name="title">Vacina Soft</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
     <h:body>
         
-        <p:layout style="min-width:600px;min-height:800px;">
+        <p:layout fullPage="true" style="margin: 0px; overflow: hidden;  background: cadetblue">
             
-            <p:layoutUnit position="north" resizable="true" size="100" minSize="40" maxSize="200">
-                <h1><p align="center">VacinaSoft</p></h1>
+            <p:layoutUnit position="north" resizable="true" size="100" minSize="40" maxSize="100">
+                    <h1><p align="Center">VacinaSoft</p>              
+                </h1>
             </p:layoutUnit> 
-            <p:layoutUnit position="west" size="200" minSize="40" maxSize="200">
+            <p:layoutUnit position="west" size="200" minSize="20" maxSize="200" style="color: steelblue">
                         <br />
-                    <p:accordionPanel dynamic="true" cache="true">
-                        <p:tab title="Show All">
-                            <h:link outcome="/administration/Page" value="Administration"/>
+                        <p:accordionPanel dynamic="true" cache="true" style="color: steelblue" >
+                        <p:tab title="Serviços" >
+                            <ul>
+                                <li><h:link outcome="/administration/List" value="Administration" style="color: steelblue"/></li>
                             <br />                        
-                            <h:link outcome="/area/Page" value="Area"/>  
+                            <li><h:link outcome="/area/List" value="Area"/></li>  
                             <br />
-                            <h:link outcome="/healthAgent/Page" value="Health Agent"/>
+                            <li><h:link outcome="/healthAgent/List" value="Health Agent"/></li>
                             <br/>
-                            <h:link outcome="/lotVaccine/Page" value="LotVaccine"/>
+                            <li><h:link outcome="/lotVaccine/List" value="LotVaccine"/></li>
                             <br/>
-                            <h:link outcome="/pSFUser/Page" value="PSF User"/>
+                            <li><h:link outcome="/pSFUser/List" value="PSF User"/></li>
                             <br/>
-                            <h:link outcome="/street/Page" value="Street"/>
+                            <li><h:link outcome="/street/List" value="Street"/></li>
                             <br/>
-                            <h:link outcome="/vaccinator/Page" value="Vaccinator"/>
+                            <li><h:link outcome="/vaccinator/List" value="Vaccinator"/></li>
                             <br/>
-                            <h:link outcome="/vaccine/Page" value="Vaccine"/>       
+                            <li><h:link outcome="/vaccine/List" value="Vaccine"/></li>
+                            </ul>
                         </p:tab>
-                                             
-                        <p:tab title="Vaccine's Lot">
-                        </p:tab>
-                        <br />
-                        <p:tab title="PSF User">   
+                        <p:tab title="Relatórios">
                         </p:tab>
                         <br />
-                        <p:tab title="Street"> 
-                        </p:tab>
-                        <br />
-                        <p:tab title="Vaccinator">
-                        </p:tab>
-                        <br />
-                        <p:tab title="Vaccine">
+                        <p:tab title="Gráficos">
                         </p:tab>
                     </p:accordionPanel>
                  </p:layoutUnit>
             <p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
+                <ui:insert name="body"/>
             </p:layoutUnit>
-            <p:layoutUnit position="south" resizable="true" size="100" minSize="40" maxSize="200">
-                <h1><p align="center">Bye from Facelets</p></h1>
+            <p:layoutUnit position="south" resizable="true" size="80" maxSize="80" minSize="80">
+                <h1><p align="center"><h:link style="size: auto" outcome="/welcomePrimefaces" value="Welcome primefaces!"/></p></h1>
             </p:layoutUnit> 
         </p:layout>
 </h:body>
