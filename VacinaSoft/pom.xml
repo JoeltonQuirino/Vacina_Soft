@@ -20,12 +20,181 @@
             <artifactId>eclipselink</artifactId>
             <version>2.5.1</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commonj.sdo</artifactId>
+                    <groupId>org.eclipse.persistence</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
             <version>2.5.1</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.6</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>asm</artifactId>
+                    <groupId>asm</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>classworlds</artifactId>
+                    <groupId>classworlds</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-beanutils</artifactId>
+                    <groupId>commons-beanutils</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-cli</artifactId>
+                    <groupId>commons-cli</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-collections</artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-digester</artifactId>
+                    <groupId>commons-digester</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-io</artifactId>
+                    <groupId>commons-io</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-lang</artifactId>
+                    <groupId>commons-lang</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-validator</artifactId>
+                    <groupId>commons-validator</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-core</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-decoration-model</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-module-apt</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-module-fml</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-module-xdoc</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-sink-api</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-module-xhtml</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>file-management</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>doxia-site-renderer</artifactId>
+                    <groupId>org.apache.maven.doxia</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>junit</artifactId>
+                    <groupId>junit</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-artifact</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-artifact-manager</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-common-artifact-filters</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-core</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-dependency-tree</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-doxia-tools</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-dependency-analyzer</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-invoker</artifactId>
+                    <groupId>org.apache.maven.shared</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-plugin-api</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-plugin-registry</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-project</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-model</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-reporting-api</artifactId>
+                    <groupId>org.apache.maven.reporting</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-reporting-impl</artifactId>
+                    <groupId>org.apache.maven.reporting</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>maven-repository-metadata</artifactId>
+                    <groupId>org.apache.maven</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>plexus-archiver</artifactId>
+                    <groupId>org.codehaus.plexus</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>plexus-container-default</artifactId>
+                    <groupId>org.codehaus.plexus</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>plexus-io</artifactId>
+                    <groupId>org.codehaus.plexus</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>plexus-utils</artifactId>
+                    <groupId>org.codehaus.plexus</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -44,7 +213,15 @@
             <version>4.0</version>
         </dependency>
         
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>all-themes</artifactId>  
+            <version>1.0.10</version>  
+        </dependency>
+        
     </dependencies>
+    
+
 
     <build>
         <plugins>
