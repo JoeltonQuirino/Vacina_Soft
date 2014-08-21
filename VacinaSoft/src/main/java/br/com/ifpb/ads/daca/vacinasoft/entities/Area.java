@@ -6,7 +6,6 @@
 
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
-import br.com.ifpb.ads.daca.vacinasoft.entities.interfaces.AreaFacade;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "area_tbl")
-public class Area extends AbstractEntity implements Serializable,AreaFacade{
+public class Area extends AbstractEntity implements Serializable{
     
     @Column(name = "description", nullable = true, updatable = true)
     private String description;

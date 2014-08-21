@@ -5,7 +5,6 @@
  */
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
-import br.com.ifpb.ads.daca.vacinasoft.entities.interfaces.AdministrationFacade;
 import java.io.Serializable;
 import java.util.Calendar;
 import javax.persistence.Column;
@@ -22,7 +21,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "administration_tbl")
-public class Administration extends AbstractEntity implements Serializable,AdministrationFacade {
+public class Administration extends AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

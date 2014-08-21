@@ -1,7 +1,6 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
 import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AdministrationDaoInterface;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.AdministrationDao;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Administration;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -10,7 +9,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.component.UIComponent;

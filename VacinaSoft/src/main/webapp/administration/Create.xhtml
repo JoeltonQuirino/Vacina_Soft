@@ -12,8 +12,6 @@
             <h:form id="AdministrationCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{administrationController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateAdministrationLabel_serialVersionUID}" for="serialVersionUID" />
-                        <p:inputText id="serialVersionUID" value="#{administrationController.selected.serialVersionUID}" title="#{bundle.CreateAdministrationTitle_serialVersionUID}" />
                         <p:outputLabel value="#{bundle.CreateAdministrationLabel_lotVaccine}" for="lotVaccine" />
                         <p:selectOneMenu id="lotVaccine" value="#{administrationController.selected.lotVaccine}" >
                             <f:selectItems value="#{lotVaccineController.itemsAvailableSelectOne}"
