@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.com.ifpb.ads.daca.vacinasoft.dao.interfaces;
 
 import java.util.List;
@@ -17,18 +11,18 @@ import java.util.List;
  */
 public interface GenericDaoInterface<T> {
 
-    int count();
+    public int count();
 
-    void create(T entity);
+    public void create(T entity);
 
-    void edit(T entity);
+    public void edit(T entity);
 
-    T find(Object id);
+    public T find(Object id);
 
-    List<T> findAll();
+    public List<T> findAll();
 
-    List<T> findRange(int[] range);
+    public List<T> findRange(int[] range);
 
-    void remove(T entity);
+    public void remove(T entity);
     
 }
