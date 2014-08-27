@@ -6,7 +6,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
 
 
         <ui:define name="title">
@@ -39,12 +39,7 @@
                             </f:facet>
                             <h:outputText value="#{item.nameVaccine}"/>
                         </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListVaccineTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </p:column>
+                       
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{vaccineController.prepareCreate}" update=":VaccineCreateForm" oncomplete="PF('VaccineCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":VaccineViewForm" oncomplete="PF('VaccineViewDialog').show()" disabled="#{empty vaccineController.selected}"/>

@@ -7,14 +7,12 @@
       xmlns:p="http://primefaces.org/ui">
 
     
-    <ui:composition template="/template.xhtml"> 
+    <ui:composition template="/WEB-INF/templates/template.xhtml"> 
 
 
         <ui:define name="title">
             <h:outputText value="#{bundle.ListAdministrationTitle}"></h:outputText>
         </ui:define>
-
-        
         
         <ui:define name="body">
             <h:form id="AdministrationListForm">
@@ -79,12 +77,7 @@
                             </f:facet>
                             <h:outputText value="#{item.administrationDate}"/>
                         </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListAdministrationTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </p:column>
+                        
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{administrationController.prepareCreate}" update=":AdministrationCreateForm" oncomplete="PF('AdministrationCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":AdministrationViewForm" oncomplete="PF('AdministrationViewDialog').show()" disabled="#{empty administrationController.selected}"/>

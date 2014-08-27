@@ -14,8 +14,6 @@
                     <p:panelGrid columns="2" rendered="#{areaController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateAreaLabel_description}" for="description" />
                         <p:inputText id="description" value="#{areaController.selected.description}" title="#{bundle.CreateAreaTitle_description}" />
-                        <p:outputLabel value="#{bundle.CreateAreaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{areaController.selected.id}" title="#{bundle.CreateAreaTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{areaController.create}" value="#{bundle.Save}" update="display,:AreaListForm:datalist,:growl" oncomplete="handleSubmit(args,'AreaCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="AreaCreateDialog.hide()"/>

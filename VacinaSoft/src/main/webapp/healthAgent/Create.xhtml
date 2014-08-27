@@ -22,8 +22,6 @@
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateHealthAgentLabel_name}" for="name" />
                         <p:inputText id="name" value="#{healthAgentController.selected.name}" title="#{bundle.CreateHealthAgentTitle_name}" />
-                        <p:outputLabel value="#{bundle.CreateHealthAgentLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{healthAgentController.selected.id}" title="#{bundle.CreateHealthAgentTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{healthAgentController.create}" value="#{bundle.Save}" update="display,:HealthAgentListForm:datalist,:growl" oncomplete="handleSubmit(args,'HealthAgentCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="HealthAgentCreateDialog.hide()"/>

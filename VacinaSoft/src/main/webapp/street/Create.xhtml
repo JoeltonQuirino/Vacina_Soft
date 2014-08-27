@@ -22,8 +22,6 @@
                         <p:inputText id="postalCode" value="#{streetController.selected.postalCode}" title="#{bundle.CreateStreetTitle_postalCode}" />
                         <p:outputLabel value="#{bundle.CreateStreetLabel_countryCode}" for="countryCode" />
                         <p:inputText id="countryCode" value="#{streetController.selected.countryCode}" title="#{bundle.CreateStreetTitle_countryCode}" />
-                        <p:outputLabel value="#{bundle.CreateStreetLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{streetController.selected.id}" title="#{bundle.CreateStreetTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{streetController.create}" value="#{bundle.Save}" update="display,:StreetListForm:datalist,:growl" oncomplete="handleSubmit(args,'StreetCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="StreetCreateDialog.hide()"/>

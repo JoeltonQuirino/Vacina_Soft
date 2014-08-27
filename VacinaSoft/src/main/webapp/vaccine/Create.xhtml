@@ -16,8 +16,6 @@
                         <p:inputText id="wayAdministration" value="#{vaccineController.selected.wayAdministration}" title="#{bundle.CreateVaccineTitle_wayAdministration}" required="true" requiredMessage="#{bundle.CreateVaccineRequiredMessage_wayAdministration}"/>
                         <p:outputLabel value="#{bundle.CreateVaccineLabel_nameVaccine}" for="nameVaccine" />
                         <p:inputText id="nameVaccine" value="#{vaccineController.selected.nameVaccine}" title="#{bundle.CreateVaccineTitle_nameVaccine}" required="true" requiredMessage="#{bundle.CreateVaccineRequiredMessage_nameVaccine}"/>
-                        <p:outputLabel value="#{bundle.CreateVaccineLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{vaccineController.selected.id}" title="#{bundle.CreateVaccineTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{vaccineController.create}" value="#{bundle.Save}" update="display,:VaccineListForm:datalist,:growl" oncomplete="handleSubmit(args,'VaccineCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VaccineCreateDialog.hide()"/>

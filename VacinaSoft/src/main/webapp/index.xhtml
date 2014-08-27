@@ -21,9 +21,7 @@
                         <br />
                         <p:accordionPanel dynamic="true" cache="true" style="color: steelblue" >
                         <p:tab title="Serviços" >
-                            <ul>
-                                <li><h:link outcome="/administration/List" value="Administração Vacina" style="color: steelblue"/></li>
-                            <br />                        
+                            <ul>                      
                             <li><h:link outcome="/area/List" value="Área"/></li>  
                             <br />
                             <li><h:link outcome="/healthAgent/List" value="Agente de Saúde"/></li>
@@ -32,7 +30,7 @@
                             <br/>
                             <li><h:link outcome="/pSFUser/List" value="Usuário do Psf"/></li>
                             <br/>
-                            <li><h:link outcome="/street/List" value="Rua"/></li>
+                            <li><h:link outcome="/street/List" value="Endereço"/></li>
                             <br/>
                             <li><h:link outcome="/vaccinator/List" value="Vacinador"/></li>
                             <br/>
@@ -49,8 +47,8 @@
             <p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
                 <ui:insert name="body"/>
             </p:layoutUnit>
-            <p:layoutUnit position="south" resizable="true" size="80" maxSize="80" minSize="80">
-                <h1><p align="center"><h:link style="size: auto" outcome="/welcomePrimefaces" value="Welcome primefaces!"/></p></h1>
+            <p:layoutUnit position="south" resizable="false" size="60" maxSize="60" minSize="60">
+                <h5><p:outputLabel value="Todos os Direitos Reservados aos Próprietários" style="margin-top: 5px; margin-left: 10px; float: left"/></h5>
             </p:layoutUnit> 
         </p:layout>
 </h:body>
