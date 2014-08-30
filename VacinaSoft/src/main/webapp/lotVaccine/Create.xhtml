@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="LotVaccineCreateDlg" widgetVar="LotVaccineCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateLotVaccineTitle}">
+        <p:dialog id="LotVaccineCreateDlg" widgetVar="LotVaccineCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateLotVaccineTitle}">
             <h:form id="LotVaccineCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{lotVaccineController.selected != null}">

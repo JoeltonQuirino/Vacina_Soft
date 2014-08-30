@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="StreetCreateDlg" widgetVar="StreetCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateStreetTitle}">
+        <p:dialog id="StreetCreateDlg" widgetVar="StreetCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateStreetTitle}">
             <h:form id="StreetCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{streetController.selected != null}">

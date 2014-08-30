@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="HealthAgentCreateDlg" widgetVar="HealthAgentCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateHealthAgentTitle}">
+        <p:dialog id="HealthAgentCreateDlg" widgetVar="HealthAgentCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateHealthAgentTitle}">
             <h:form id="HealthAgentCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">
