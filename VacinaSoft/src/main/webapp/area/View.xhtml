@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="AreaViewDlg" widgetVar="AreaViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewAreaTitle}">
+        <p:dialog id="AreaViewDlg" widgetVar="AreaViewDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.ViewAreaTitle}">
             <h:form id="AreaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{areaController.selected != null}">

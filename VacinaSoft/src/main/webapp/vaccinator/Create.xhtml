@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="VaccinatorCreateDlg" widgetVar="VaccinatorCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateVaccinatorTitle}">
+        <p:dialog id="VaccinatorCreateDlg" widgetVar="VaccinatorCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateVaccinatorTitle}">
             <h:form id="VaccinatorCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{vaccinatorController.selected != null}">
@@ -18,8 +18,6 @@
                         <p:inputText id="nameVaccinator" value="#{vaccinatorController.selected.nameVaccinator}" title="#{bundle.CreateVaccinatorTitle_nameVaccinator}" required="true" requiredMessage="#{bundle.CreateVaccinatorRequiredMessage_nameVaccinator}"/>
                         <p:outputLabel value="#{bundle.CreateVaccinatorLabel_cpfVaccinator}" for="cpfVaccinator" />
                         <p:inputText id="cpfVaccinator" value="#{vaccinatorController.selected.cpfVaccinator}" title="#{bundle.CreateVaccinatorTitle_cpfVaccinator}" required="true" requiredMessage="#{bundle.CreateVaccinatorRequiredMessage_cpfVaccinator}"/>
-                        <p:outputLabel value="#{bundle.CreateVaccinatorLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{vaccinatorController.selected.id}" title="#{bundle.CreateVaccinatorTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{vaccinatorController.create}" value="#{bundle.Save}" update="display,:VaccinatorListForm:datalist,:growl" oncomplete="handleSubmit(args,'VaccinatorCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VaccinatorCreateDialog.hide()"/>

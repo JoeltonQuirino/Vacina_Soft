@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="AdministrationCreateDlg" widgetVar="AdministrationCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAdministrationTitle}">
+        <p:dialog id="AdministrationCreateDlg" widgetVar="AdministrationCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateAdministrationTitle}">
             <h:form id="AdministrationCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{administrationController.selected != null}">
@@ -40,8 +40,6 @@
                         <p:inputText id="vaccineDose" value="#{administrationController.selected.vaccineDose}" title="#{bundle.CreateAdministrationTitle_vaccineDose}" required="true" requiredMessage="#{bundle.CreateAdministrationRequiredMessage_vaccineDose}"/>
                         <p:outputLabel value="#{bundle.CreateAdministrationLabel_administrationDate}" for="administrationDate" />
                         <p:inputText id="administrationDate" value="#{administrationController.selected.administrationDate}" title="#{bundle.CreateAdministrationTitle_administrationDate}" required="true" requiredMessage="#{bundle.CreateAdministrationRequiredMessage_administrationDate}"/>
-                        <p:outputLabel value="#{bundle.CreateAdministrationLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{administrationController.selected.id}" title="#{bundle.CreateAdministrationTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{administrationController.create}" value="#{bundle.Save}" update="display,:AdministrationListForm:datalist,:growl" oncomplete="handleSubmit(args,'AdministrationCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="AdministrationCreateDialog.hide()"/>

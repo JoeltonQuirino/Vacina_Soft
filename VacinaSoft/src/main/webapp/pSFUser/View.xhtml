@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="PSFUserViewDlg" widgetVar="PSFUserViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewPSFUserTitle}">
+        <p:dialog id="PSFUserViewDlg" widgetVar="PSFUserViewDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.ViewPSFUserTitle}">
             <h:form id="PSFUserViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{pSFUserController.selected != null}">

@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="AdministrationEditDlg" widgetVar="AdministrationEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAdministrationTitle}">
+        <p:dialog id="AdministrationEditDlg" widgetVar="AdministrationEditDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.EditAdministrationTitle}">
             <h:form id="AdministrationEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{administrationController.selected != null}">

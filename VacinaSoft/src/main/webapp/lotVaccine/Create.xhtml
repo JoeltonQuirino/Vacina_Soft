@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="LotVaccineCreateDlg" widgetVar="LotVaccineCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateLotVaccineTitle}">
+        <p:dialog id="LotVaccineCreateDlg" widgetVar="LotVaccineCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreateLotVaccineTitle}">
             <h:form id="LotVaccineCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{lotVaccineController.selected != null}">
@@ -26,8 +26,6 @@
                         <p:inputText id="vaccine" value="#{lotVaccineController.selected.vaccine}" title="#{bundle.CreateLotVaccineTitle_vaccine}" />
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_validityDate}" for="validityDate" />
                         <p:inputText id="validityDate" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.CreateLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_validityDate}"/>
-                        <p:outputLabel value="#{bundle.CreateLotVaccineLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{lotVaccineController.selected.id}" title="#{bundle.CreateLotVaccineTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{lotVaccineController.create}" value="#{bundle.Save}" update="display,:LotVaccineListForm:datalist,:growl" oncomplete="handleSubmit(args,'LotVaccineCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="LotVaccineCreateDialog.hide()"/>

@@ -8,7 +8,7 @@
 
     <ui:composition>
 
-        <p:dialog id="PSFUserCreateDlg" widgetVar="PSFUserCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePSFUserTitle}">
+        <p:dialog id="PSFUserCreateDlg" widgetVar="PSFUserCreateDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.CreatePSFUserTitle}">
             <h:form id="PSFUserCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{pSFUserController.selected != null}">
@@ -50,8 +50,6 @@
                         <p:inputText id="gender" value="#{pSFUserController.selected.gender}" title="#{bundle.CreatePSFUserTitle_gender}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressNumber}" for="adressNumber" />
                         <p:inputText id="adressNumber" value="#{pSFUserController.selected.adressNumber}" title="#{bundle.CreatePSFUserTitle_adressNumber}" />
-                        <p:outputLabel value="#{bundle.CreatePSFUserLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{pSFUserController.selected.id}" title="#{bundle.CreatePSFUserTitle_id}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{pSFUserController.create}" value="#{bundle.Save}" update="display,:PSFUserListForm:datalist,:growl" oncomplete="handleSubmit(args,'PSFUserCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="PSFUserCreateDialog.hide()"/>
