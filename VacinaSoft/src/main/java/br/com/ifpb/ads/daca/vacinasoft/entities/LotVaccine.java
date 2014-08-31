@@ -3,18 +3,16 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 import java.io.Serializable;
 import java.util.Calendar;
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 /**
  *
  * @author Joelton
  */
-@Entity
-@Table(name = "lot_vaccine_tbl")
+@Embeddable
 public class LotVaccine extends AbstractEntity implements Serializable{
     
     private static final long serialVersionUID = 1L;
