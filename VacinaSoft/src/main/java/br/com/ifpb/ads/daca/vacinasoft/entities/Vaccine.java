@@ -3,10 +3,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,19 +23,9 @@ public class Vaccine extends AbstractEntity implements Serializable {
     @Column (name = "name_vaccine", nullable = false, updatable = false)
     private String nameVaccine; 
     
-    @OneToMany(mappedBy = "vaccine", targetEntity = PSFUser.class)
-    private List<PSFUser> psfUser;
-    
-    @ManyToOne
-    @JoinColumn(name = "id_vaccinator", referencedColumnName = "id", nullable = false, updatable = false)
-    private Vaccinator vaccinator;
-        
-    @Embedded
-    private Administration administration;
-    
-    @Embedded
-    private LotVaccine lotVaccine;
-    
+    @OneToMany(mappedBy = "idVaccine", targetEntity = LotVaccine.class)
+    private List<LotVaccine> lots;
+
     /**
      * @return the wayAdministration
      */
@@ -67,36 +54,17 @@ public class Vaccine extends AbstractEntity implements Serializable {
         this.nameVaccine = nameVaccine;
     }
 
-    public List<PSFUser> getPsfUser() {
-        return psfUser;
+    /**
+     * @return the lots
+     */
+    public List<LotVaccine> getLots() {
+        return lots;
     }
 
-    public void setPsfUser(List<PSFUser> psfUser) {
-        this.psfUser = psfUser;
+    /**
+     * @param lots the lots to set
+     */
+    public void setLots(List<LotVaccine> lots) {
+        this.lots = lots;
     }
-
-    public Vaccinator getVaccinator() {
-        return vaccinator;
-    }
-
-    public void setVaccinator(Vaccinator vaccinator) {
-        this.vaccinator = vaccinator;
-    }
-
-    public Administration getAdministration() {
-        return administration;
-    }
-
-    public void setAdministration(Administration administration) {
-        this.administration = administration;
-    }
-
-    public LotVaccine getLotVaccine() {
-        return lotVaccine;
-    }
-
-    public void setLotVaccine(LotVaccine lotVaccine) {
-        this.lotVaccine = lotVaccine;
-    }
-
 }

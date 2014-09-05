@@ -14,8 +14,10 @@
                     <p:panelGrid columns="2" rendered="#{vaccineController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateVaccineLabel_wayAdministration}" for="wayAdministration" />
                         <p:inputText id="wayAdministration" value="#{vaccineController.selected.wayAdministration}" title="#{bundle.CreateVaccineTitle_wayAdministration}" required="true" requiredMessage="#{bundle.CreateVaccineRequiredMessage_wayAdministration}"/>
+                        
                         <p:outputLabel value="#{bundle.CreateVaccineLabel_nameVaccine}" for="nameVaccine" />
                         <p:inputText id="nameVaccine" value="#{vaccineController.selected.nameVaccine}" title="#{bundle.CreateVaccineTitle_nameVaccine}" required="true" requiredMessage="#{bundle.CreateVaccineRequiredMessage_nameVaccine}"/>
+                  
                     </p:panelGrid>
                     <p:commandButton actionListener="#{vaccineController.create}" value="#{bundle.Save}" update="display,:VaccineListForm:datalist,:growl" oncomplete="handleSubmit(args,'VaccineCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VaccineCreateDialog.hide()"/>

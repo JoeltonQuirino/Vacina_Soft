@@ -27,15 +27,15 @@ public class Vaccinator extends AbstractEntity implements Serializable {
     @Column(name = "cpf_vaccinator", nullable = false, length = 11, updatable = false)
     private String cpfVaccinator;
 
-    @OneToMany(mappedBy = "vaccinator", targetEntity = Vaccine.class)
-    private List<Vaccine> vaccines;
+    @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)
+    private List<Administration> administrations;
 
-    public List<Vaccine> getVaccines() {
-        return vaccines;
+    public List<Administration> getAdministrations() {
+        return administrations;
     }
 
-    public void setVaccines(List<Vaccine> vaccines) {
-        this.vaccines = vaccines;
+    public void setAdministrations(List<Administration> administrations) {
+        this.administrations = administrations;
     }
 
     /**

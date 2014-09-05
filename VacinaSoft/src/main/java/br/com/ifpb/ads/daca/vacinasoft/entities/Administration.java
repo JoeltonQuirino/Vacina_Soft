@@ -3,14 +3,19 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 import java.io.Serializable;
 import java.util.Calendar;
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 /**
  *
  * @author Joelton
  */
-@Embeddable
+@Entity
+@Table(name = "administration_tbl")
 public class Administration extends AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -38,6 +43,40 @@ public class Administration extends AbstractEntity implements Serializable {
     @Column(name = "administration_date", nullable = false, updatable = false)
     private Calendar administrationDate;
 
+    @OneToOne(mappedBy = "lotId", targetEntity = LotVaccine.class)
+    private LotVaccine lotVaccine;
+
+    @ManyToOne
+    @JoinColumn(name = "id_psf_user", referencedColumnName = "id", nullable = false)
+    private PSFUser psfUser;
+
+    @ManyToOne
+    @JoinColumn(name = "id_vaccinator", referencedColumnName = "id", nullable = false, updatable = false)
+    private Vaccinator vaccinator;
+
+    public LotVaccine getLotVaccine() {
+        return lotVaccine;
+    }
+
+    public void setLotVaccine(LotVaccine lotVaccine) {
+        this.lotVaccine = lotVaccine;
+    }
+
+    public PSFUser getPsfUser() {
+        return psfUser;
+    }
+
+    public void setPsfUser(PSFUser psfUser) {
+        this.psfUser = psfUser;
+    }
+
+    public Vaccinator getVaccinator() {
+        return vaccinator;
+    }
+
+    public void setVaccinator(Vaccinator vaccinator) {
+        this.vaccinator = vaccinator;
+    }
 
     /**
      * @return the strategyAdministration
