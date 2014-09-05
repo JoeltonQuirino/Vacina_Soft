@@ -2,12 +2,10 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -60,7 +58,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
 
     @Column(name = "adress_number", updatable = true)
     private int adressNumber;
-                            
+
     @ManyToOne
     @JoinColumn(name = "id_street", referencedColumnName = "id", nullable = false)
     private Street adressStreet;
@@ -69,9 +67,10 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @JoinColumn(name = "id_agent", referencedColumnName = "id", nullable = false, updatable = false)
     private HealthAgent healthAgent;
 
-    @OneToMany(mappedBy = "psfUser", targetEntity = Administration.class)
-    private List<Administration> administrations;
-
+    @ManyToOne
+    @JoinColumn(name = "id_vaccines", referencedColumnName = "id", nullable = false, updatable = false)
+    private Vaccine vaccine;
+    
     public Street getAdressStreet() {
         return adressStreet;
     }
@@ -80,12 +79,12 @@ public class PSFUser extends AbstractEntity implements Serializable {
         this.adressStreet = adressStreet;
     }
 
-    public List<Administration> getAdministrations() {
-        return administrations;
+    public Vaccine getVaccine() {
+        return vaccine;
     }
 
-    public void setAdministrations(List<Administration> administrations) {
-        this.administrations = administrations;
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
     }
 
     public HealthAgent getHealthAgent() {

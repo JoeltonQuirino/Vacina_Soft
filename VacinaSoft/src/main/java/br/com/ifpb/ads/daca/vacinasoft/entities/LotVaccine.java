@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -36,15 +34,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Column (name = "amount_dose", nullable = false, updatable = false)
     private int amountDose; // quantidade de doses
-    
-    @ManyToOne
-    @JoinColumn(name = "id_vaccine", referencedColumnName = "id", nullable = false, updatable = false)
-    private Vaccine idVaccine;
-    
-    @ManyToOne
-    @JoinColumn (name = "id_lot", referencedColumnName = "id", nullable = false, updatable = false)
-    private Administration lotId;
-        
+            
     /**
      * @return the laboratory
      */
@@ -113,20 +103,6 @@ public class LotVaccine extends AbstractEntity implements Serializable{
      */
     public void setAmountDose(int amountDose) {
         this.amountDose = amountDose;
-    }
-
-    /**
-     * @return the vaccine
-     */
-    public Vaccine getVaccine() {
-        return idVaccine;
-    }
-
-    /**
-     * @param vaccine the vaccine to set
-     */
-    public void setVaccine(Vaccine vaccine) {
-        this.idVaccine = vaccine;
     }
 
     /**
