@@ -33,7 +33,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @Column(name = "adress_complement", nullable = false)
     private String adressComplement;
 
-    @Column(name = "cpf", unique = true, updatable = false, length = 11)
+    @Column(name = "cpf", unique = true, updatable = false, length = 14)
     private String cpf;
 
     @Column(name = "rg", unique = true, updatable = false)

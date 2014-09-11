@@ -11,9 +11,7 @@
         <p:dialog id="HealthAgentEditDlg" widgetVar="HealthAgentEditDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.EditHealthAgentTitle}">
             <h:form id="HealthAgentEditForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditHealthAgentLabel_PSFUsers}" for="PSFUsers" />
-                        <p:inputText id="PSFUsers" value="#{healthAgentController.selected.PSFUsers}" title="#{bundle.EditHealthAgentTitle_PSFUsers}" />
+                    <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">                       
                         <p:outputLabel value="#{bundle.EditHealthAgentLabel_serviceArea}" for="serviceArea" />
                         <p:selectOneMenu id="serviceArea" value="#{healthAgentController.selected.serviceArea}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>

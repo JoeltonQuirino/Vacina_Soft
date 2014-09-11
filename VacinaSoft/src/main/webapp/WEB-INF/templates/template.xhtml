@@ -27,19 +27,23 @@
             <h:form>
                 <p:menubar>
                     <p:menuitem value="#{bundle.Home}" outcome="/home" icon="ui-icon-home"/>
-                    <p:submenu label="#{bundle.Maintenance}">
-                        <p:menuitem value="Administração Vacina" outcome="/administration/List.xhtml" icon="ui-icon-note"/>
-                        <p:menuitem value="Área" outcome="/area/List.xhtml" icon="ui-icon-arrow-4"/>
+                    <p:submenu label="Pessoas" icon="ui-icon-person">
                         <p:menuitem value="Agente de Saúde" outcome="/healthAgent/List.xhtml" icon="ui-icon-person"/>
-                        <p:menuitem value="Lote da Vacina" outcome="/lotVaccine/List.xhtml" icon="ui-icon-tag"/>
                         <p:menuitem value="Usuário do Psf" outcome="/pSFUser/List.xhtml" icon="ui-icon-person"/>
-                        <p:menuitem value="Endereço" outcome="/street/List.xhtml" icon="ui-icon-contact"/>
                         <p:menuitem value="Vacinador" outcome="/vaccinator/List.xhtml" icon="ui-icon-person"/>
+                    </p:submenu>
+                    <p:submenu label="Vacina">
                         <p:menuitem value="Vacina" outcome="/vaccine/List.xhtml" icon="ui-icon-plus"/>
+                        <p:menuitem value="Lote da Vacina" outcome="/lotVaccine/List.xhtml" icon="ui-icon-tag"/>
+                        <p:menuitem value="Administração Vacina" outcome="/administration/List.xhtml" icon="ui-icon-note"/>
+                    </p:submenu>
+                    <p:submenu label="Área de Atuação">
+                        <p:menuitem value="Área" outcome="/area/List.xhtml" icon="ui-icon-arrow-4"/>
+                        <p:menuitem value="Endereço" outcome="/street/List.xhtml" icon="ui-icon-contact"/>
                     </p:submenu>
                     <p:submenu label="Relatórios" icon="ui-icon-clipboard"/>
                     <p:menuitem value="Sair" icon="ui-icon-power"/>
-                </p:menubar>
+                </p:menubar>            
             </h:form>
         </div>
         

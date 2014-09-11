@@ -12,8 +12,6 @@
             <h:form id="AdministrationViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{administrationController.selected != null}">
-                        <h:outputText value="#{bundle.ViewAdministrationLabel_serialVersionUID}"/>
-                        <h:outputText value="#{administrationController.selected.serialVersionUID}" title="#{bundle.ViewAdministrationTitle_serialVersionUID}"/>
                         <h:outputText value="#{bundle.ViewAdministrationLabel_lotVaccine}"/>
                         <h:outputText value="#{administrationController.selected.lotVaccine}" title="#{bundle.ViewAdministrationTitle_lotVaccine}"/>
                         <h:outputText value="#{bundle.ViewAdministrationLabel_psfUser}"/>

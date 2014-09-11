@@ -11,9 +11,7 @@
         <p:dialog id="HealthAgentViewDlg" widgetVar="HealthAgentViewDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.ViewHealthAgentTitle}">
             <h:form id="HealthAgentViewForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">
-                        <h:outputText value="#{bundle.ViewHealthAgentLabel_PSFUsers}"/>
-                        <h:outputText value="#{healthAgentController.selected.PSFUsers}" title="#{bundle.ViewHealthAgentTitle_PSFUsers}"/>
+                    <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">                        
                         <h:outputText value="#{bundle.ViewHealthAgentLabel_serviceArea}"/>
                         <h:outputText value="#{healthAgentController.selected.serviceArea}" title="#{bundle.ViewHealthAgentTitle_serviceArea}"/>
                         <h:outputText value="#{bundle.ViewHealthAgentLabel_name}"/>

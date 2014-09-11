@@ -19,7 +19,7 @@
                         <p:outputLabel value="#{bundle.CreateStreetLabel_region}" for="region" />
                         <p:inputText id="region" value="#{streetController.selected.region}" title="#{bundle.CreateStreetTitle_region}" />
                         <p:outputLabel value="#{bundle.CreateStreetLabel_postalCode}" for="postalCode" />
-                        <p:inputText id="postalCode" value="#{streetController.selected.postalCode}" title="#{bundle.CreateStreetTitle_postalCode}" />
+                        <p:inputMask mask="99999-999" id="postalCode" value="#{streetController.selected.postalCode}" title="#{bundle.CreateStreetTitle_postalCode}" />
                         <p:outputLabel value="#{bundle.CreateStreetLabel_countryCode}" for="countryCode" />
                         <p:inputText id="countryCode" value="#{streetController.selected.countryCode}" title="#{bundle.CreateStreetTitle_countryCode}" />
                     </p:panelGrid>
