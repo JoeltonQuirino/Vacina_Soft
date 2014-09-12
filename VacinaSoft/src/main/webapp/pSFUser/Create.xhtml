@@ -43,9 +43,9 @@
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_responsibleForCompleting}" for="responsibleForCompleting" />
                         <p:inputText id="responsibleForCompleting" value="#{pSFUserController.selected.responsibleForCompleting}" title="#{bundle.CreatePSFUserTitle_responsibleForCompleting}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_birthDate}" for="birthDate" />
-                        <p:inputText id="birthDate" value="#{pSFUserController.selected.birthDate}" title="#{bundle.CreatePSFUserTitle_birthDate}" />
+                        <p:inputMask mask="99/99/9999" id="birthDate" value="#{pSFUserController.selected.birthDate}" title="#{bundle.CreatePSFUserTitle_birthDate}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_registrationDate}" for="registrationDate" />
-                        <p:inputText id="registrationDate" value="#{pSFUserController.selected.registrationDate}" title="#{bundle.CreatePSFUserTitle_registrationDate}" />
+                        <p:inputMask mask="99/99/9999" id="registrationDate" value="#{pSFUserController.selected.registrationDate}" title="#{bundle.CreatePSFUserTitle_registrationDate}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_gender}" for="gender" />
                         <p:inputText id="gender" value="#{pSFUserController.selected.gender}" title="#{bundle.CreatePSFUserTitle_gender}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressNumber}" for="adressNumber" />
