@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VaccinatorEditDlg" widgetVar="VaccinatorEditDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.EditVaccinatorTitle}">
+            <h:form id="VaccinatorEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vaccinatorController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditVaccinatorLabel_corenRecord}" for="corenRecord" />
+                        <p:inputText id="corenRecord" value="#{vaccinatorController.selected.corenRecord}" title="#{bundle.EditVaccinatorTitle_corenRecord}" required="true" requiredMessage="#{bundle.EditVaccinatorRequiredMessage_corenRecord}"/>
+                        <p:outputLabel value="#{bundle.EditVaccinatorLabel_nameVaccinator}" for="nameVaccinator" />
+                        <p:inputText id="nameVaccinator" value="#{vaccinatorController.selected.nameVaccinator}" title="#{bundle.EditVaccinatorTitle_nameVaccinator}" required="true" requiredMessage="#{bundle.EditVaccinatorRequiredMessage_nameVaccinator}"/>
+                        <p:outputLabel value="#{bundle.EditVaccinatorLabel_cpfVaccinator}" for="cpfVaccinator" />
+                        <p:inputText id="cpfVaccinator" value="#{vaccinatorController.selected.cpfVaccinator}" title="#{bundle.EditVaccinatorTitle_cpfVaccinator}" required="true" requiredMessage="#{bundle.EditVaccinatorRequiredMessage_cpfVaccinator}"/>
+                        <p:outputLabel value="#{bundle.EditVaccinatorLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{vaccinatorController.selected.id}" title="#{bundle.EditVaccinatorTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{vaccinatorController.update}" value="#{bundle.Save}" update="display,:VaccinatorListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VaccinatorEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="VaccinatorEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

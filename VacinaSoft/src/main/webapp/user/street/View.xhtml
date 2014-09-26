@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StreetViewDlg" widgetVar="StreetViewDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.ViewStreetTitle}">
+            <h:form id="StreetViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{streetController.selected != null}">
+                        <h:outputText value="#{bundle.ViewStreetLabel_district}"/>
+                        <h:outputText value="#{streetController.selected.district}" title="#{bundle.ViewStreetTitle_district}"/>
+                        <h:outputText value="#{bundle.ViewStreetLabel_nameStreet}"/>
+                        <h:outputText value="#{streetController.selected.nameStreet}" title="#{bundle.ViewStreetTitle_nameStreet}"/>
+                        <h:outputText value="#{bundle.ViewStreetLabel_region}"/>
+                        <h:outputText value="#{streetController.selected.region}" title="#{bundle.ViewStreetTitle_region}"/>
+                        <h:outputText value="#{bundle.ViewStreetLabel_postalCode}"/>
+                        <h:outputText value="#{streetController.selected.postalCode}" title="#{bundle.ViewStreetTitle_postalCode}"/>
+                        <h:outputText value="#{bundle.ViewStreetLabel_countryCode}"/>
+                        <h:outputText value="#{streetController.selected.countryCode}" title="#{bundle.ViewStreetTitle_countryCode}"/>
+                        <h:outputText value="#{bundle.ViewStreetLabel_id}"/>
+                        <h:outputText value="#{streetController.selected.id}" title="#{bundle.ViewStreetTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="StreetViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

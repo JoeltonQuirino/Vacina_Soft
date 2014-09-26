@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AdministrationViewDlg" widgetVar="AdministrationViewDialog" modal="true" resizable="false" appendTo="@(corpo)" header="#{bundle.ViewAdministrationTitle}">
+            <h:form id="AdministrationViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{administrationController.selected != null}">
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_lotVaccine}"/>
+                        <h:outputText value="#{administrationController.selected.lotVaccine}" title="#{bundle.ViewAdministrationTitle_lotVaccine}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_psfUser}"/>
+                        <h:outputText value="#{administrationController.selected.psfUser}" title="#{bundle.ViewAdministrationTitle_psfUser}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_vaccinator}"/>
+                        <h:outputText value="#{administrationController.selected.vaccinator}" title="#{bundle.ViewAdministrationTitle_vaccinator}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_strategyAdministration}"/>
+                        <h:outputText value="#{administrationController.selected.strategyAdministration}" title="#{bundle.ViewAdministrationTitle_strategyAdministration}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_psfAdministration}"/>
+                        <h:outputText value="#{administrationController.selected.psfAdministration}" title="#{bundle.ViewAdministrationTitle_psfAdministration}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_cnes}"/>
+                        <h:outputText value="#{administrationController.selected.cnes}" title="#{bundle.ViewAdministrationTitle_cnes}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_vaccineDose}"/>
+                        <h:outputText value="#{administrationController.selected.vaccineDose}" title="#{bundle.ViewAdministrationTitle_vaccineDose}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_administrationDate}"/>
+                        <h:outputText value="#{administrationController.selected.administrationDate}" title="#{bundle.ViewAdministrationTitle_administrationDate}"/>
+                        <h:outputText value="#{bundle.ViewAdministrationLabel_id}"/>
+                        <h:outputText value="#{administrationController.selected.id}" title="#{bundle.ViewAdministrationTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="AdministrationViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
