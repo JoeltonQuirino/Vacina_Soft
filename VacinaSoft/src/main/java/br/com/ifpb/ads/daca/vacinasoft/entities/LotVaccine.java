@@ -2,6 +2,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -143,5 +144,61 @@ public class LotVaccine extends AbstractEntity implements Serializable{
      */
     public void setValidityDate(Calendar validityDate) {
         this.validityDate = validityDate;
-    }   
+    } 
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.validityDate);
+        hash = 53 * hash + Objects.hashCode(this.laboratory);
+        hash = 53 * hash + this.amountAmpoule;
+        hash = 53 * hash + Objects.hashCode(this.receiptDate);
+        hash = 53 * hash + Objects.hashCode(this.lotCode);
+        hash = 53 * hash + this.amountDose;
+        hash = 53 * hash + Objects.hashCode(this.idVaccine);
+        hash = 53 * hash + Objects.hashCode(this.lotId);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final LotVaccine other = (LotVaccine) obj;
+        if (!Objects.equals(this.validityDate, other.validityDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.laboratory, other.laboratory)) {
+            return false;
+        }
+        if (this.amountAmpoule != other.amountAmpoule) {
+            return false;
+        }
+        if (!Objects.equals(this.receiptDate, other.receiptDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.lotCode, other.lotCode)) {
+            return false;
+        }
+        if (this.amountDose != other.amountDose) {
+            return false;
+        }
+        if (!Objects.equals(this.idVaccine, other.idVaccine)) {
+            return false;
+        }
+        if (!Objects.equals(this.lotId, other.lotId)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "LotVaccine{" + "validityDate=" + validityDate + ", laboratory=" + laboratory + ", amountAmpoule=" + amountAmpoule + ", receiptDate=" + receiptDate + ", lotCode=" + lotCode + ", amountDose=" + amountDose + ", idVaccine=" + idVaccine + ", lotId=" + lotId + '}';
+    }
+    
 }

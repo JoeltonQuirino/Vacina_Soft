@@ -16,8 +16,8 @@
             <to-view-id>/login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    <lifecycle>
+<!--    <lifecycle>
         <phase-listener>br.com.ifpb.ads.daca.vacinasoft.security.LoginPhaseListener</phase-listener>
-    </lifecycle>
+    </lifecycle>-->
 </faces-config>
 

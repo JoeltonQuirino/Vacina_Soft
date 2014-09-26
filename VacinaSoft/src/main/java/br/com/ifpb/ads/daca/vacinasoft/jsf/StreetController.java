@@ -112,7 +112,7 @@ public class StreetController implements Serializable {
     }
 
     public Street getStreet(long id) {
-        return getFacade().find(id);
+        return (Street)getFacade().find(id);
     }
 
     public List<Street> getItemsAvailableSelectMany() {

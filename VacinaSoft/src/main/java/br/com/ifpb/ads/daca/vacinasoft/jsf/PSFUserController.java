@@ -110,7 +110,7 @@ public class PSFUserController implements Serializable {
     }
 
     public PSFUser getPSFUser(long id) {
-        return getFacade().find(id);
+        return (PSFUser)getFacade().find(id);
     }
 
     public List<PSFUser> getItemsAvailableSelectMany() {

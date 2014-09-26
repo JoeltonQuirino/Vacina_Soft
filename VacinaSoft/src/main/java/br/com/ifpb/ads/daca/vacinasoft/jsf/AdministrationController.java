@@ -109,7 +109,7 @@ public class AdministrationController implements Serializable {
     }
 
     public Administration getAdministration(long id) {
-        return getFacade().find(id);
+        return (Administration)getFacade().find(id);
     }
 
     public List<Administration> getItemsAvailableSelectMany() {

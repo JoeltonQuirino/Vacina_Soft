@@ -2,6 +2,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -80,6 +81,53 @@ public class Street extends AbstractEntity implements Serializable {
 
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
+    }
+    
+     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.district);
+        hash = 23 * hash + Objects.hashCode(this.nameStreet);
+        hash = 23 * hash + Objects.hashCode(this.region);
+        hash = 23 * hash + Objects.hashCode(this.postalCode);
+        hash = 23 * hash + Objects.hashCode(this.countryCode);
+        hash = 23 * hash + Objects.hashCode(this.psfUsers);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Street other = (Street) obj;
+        if (!Objects.equals(this.district, other.district)) {
+            return false;
+        }
+        if (!Objects.equals(this.nameStreet, other.nameStreet)) {
+            return false;
+        }
+        if (!Objects.equals(this.region, other.region)) {
+            return false;
+        }
+        if (!Objects.equals(this.postalCode, other.postalCode)) {
+            return false;
+        }
+        if (!Objects.equals(this.countryCode, other.countryCode)) {
+            return false;
+        }
+        if (!Objects.equals(this.psfUsers, other.psfUsers)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return nameStreet;
     }
 
 }

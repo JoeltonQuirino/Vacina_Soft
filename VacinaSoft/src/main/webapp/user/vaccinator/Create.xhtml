@@ -17,7 +17,7 @@
                         <p:outputLabel value="#{bundle.CreateVaccinatorLabel_nameVaccinator}" for="nameVaccinator" />
                         <p:inputText id="nameVaccinator" value="#{vaccinatorController.selected.nameVaccinator}" title="#{bundle.CreateVaccinatorTitle_nameVaccinator}" required="true" requiredMessage="#{bundle.CreateVaccinatorRequiredMessage_nameVaccinator}"/>
                         <p:outputLabel value="#{bundle.CreateVaccinatorLabel_cpfVaccinator}" for="cpfVaccinator" />
-                        <inputMask mask="999.999.999-99" id="cpfVaccinator" value="#{vaccinatorController.selected.cpfVaccinator}" title="#{bundle.CreateVaccinatorTitle_cpfVaccinator}" required="true" requiredMessage="#{bundle.CreateVaccinatorRequiredMessage_cpfVaccinator}"/>
+                        <p:inputMask mask="999.999.999-99" id="cpfVaccinator" value="#{vaccinatorController.selected.cpfVaccinator}" title="#{bundle.CreateVaccinatorTitle_cpfVaccinator}" required="true" requiredMessage="#{bundle.CreateVaccinatorRequiredMessage_cpfVaccinator}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{vaccinatorController.create}" value="#{bundle.Save}" update="display,:VaccinatorListForm:datalist,:growl" oncomplete="handleSubmit(args,'VaccinatorCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VaccinatorCreateDialog.hide()"/>

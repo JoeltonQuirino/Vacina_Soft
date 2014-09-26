@@ -12,8 +12,6 @@
             <h:form id="HealthAgentCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{healthAgentController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateHealthAgentLabel_PSFUsers}" for="PSFUsers" />
-                        <p:inputText id="PSFUsers" value="#{healthAgentController.selected.PSFUsers}" title="#{bundle.CreateHealthAgentTitle_PSFUsers}" />
                         <p:outputLabel value="#{bundle.CreateHealthAgentLabel_serviceArea}" for="serviceArea" />
                         <p:selectOneMenu id="serviceArea" value="#{healthAgentController.selected.serviceArea}" >
                             <f:selectItems value="#{areaController.itemsAvailableSelectOne}"

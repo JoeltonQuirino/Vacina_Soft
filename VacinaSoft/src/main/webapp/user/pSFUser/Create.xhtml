@@ -35,7 +35,7 @@
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_adressComplement}" for="adressComplement" />
                         <p:inputText id="adressComplement" value="#{pSFUserController.selected.adressComplement}" title="#{bundle.CreatePSFUserTitle_adressComplement}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_cpf}" for="cpf" />
-                        <p:inputText id="cpf" value="#{pSFUserController.selected.cpf}" title="#{bundle.CreatePSFUserTitle_cpf}" />
+                        <p:inputMask mask="999.999.999-99" id="cpf" value="#{pSFUserController.selected.cpf}" title="#{bundle.CreatePSFUserTitle_cpf}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_rg}" for="rg" />
                         <p:inputText id="rg" value="#{pSFUserController.selected.rg}" title="#{bundle.CreatePSFUserTitle_rg}" />
                         <p:outputLabel value="#{bundle.CreatePSFUserLabel_susCard}" for="susCard" />

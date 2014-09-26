@@ -112,7 +112,7 @@ public class LotVaccineController implements Serializable {
     }
 
     public LotVaccine getLotVaccine(long id) {
-        return getFacade().find(id);
+        return (LotVaccine)getFacade().find(id);
     }
 
     public List<LotVaccine> getItemsAvailableSelectMany() {

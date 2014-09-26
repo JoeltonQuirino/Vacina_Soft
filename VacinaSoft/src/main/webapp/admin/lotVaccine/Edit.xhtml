@@ -25,7 +25,7 @@
                         <p:outputLabel value="#{bundle.EditLotVaccineLabel_vaccine}" for="vaccine" />
                         <p:inputText id="vaccine" value="#{lotVaccineController.selected.vaccine}" title="#{bundle.EditLotVaccineTitle_vaccine}" />
                         <p:outputLabel value="#{bundle.EditLotVaccineLabel_validityDate}" for="validityDate" />
-                        <p:inputText id="validityDate" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.EditLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.EditLotVaccineRequiredMessage_validityDate}"/>
+                        <p:inputMask id="validityDate" mask="99/99/9999" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.EditLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.EditLotVaccineRequiredMessage_validityDate}"/>
                         <p:outputLabel value="#{bundle.EditLotVaccineLabel_id}" for="id" />
                         <p:inputText id="id" value="#{lotVaccineController.selected.id}" title="#{bundle.EditLotVaccineTitle_id}" />
                     </p:panelGrid>

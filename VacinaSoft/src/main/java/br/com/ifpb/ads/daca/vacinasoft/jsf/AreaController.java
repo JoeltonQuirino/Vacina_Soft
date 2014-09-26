@@ -110,7 +110,7 @@ public class AreaController implements Serializable {
     }
 
     public Area getArea(long id) {
-        return getFacade().find(id);
+        return (Area)getFacade().find(id);
     }
 
     public List<Area> getItemsAvailableSelectMany() {

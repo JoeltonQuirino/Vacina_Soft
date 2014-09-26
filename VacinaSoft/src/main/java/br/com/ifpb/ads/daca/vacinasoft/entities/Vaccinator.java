@@ -2,6 +2,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -24,7 +25,7 @@ public class Vaccinator extends AbstractEntity implements Serializable {
     @Column(name = "name_vaccinator", nullable = false, length = 100, updatable = false)
     private String nameVaccinator;
 
-    @Column(name = "cpf_vaccinator", nullable = false, length = 11, updatable = false)
+    @Column(name = "cpf_vaccinator", nullable = false, length = 15, updatable = false)
     private String cpfVaccinator;
 
     @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)
@@ -78,5 +79,44 @@ public class Vaccinator extends AbstractEntity implements Serializable {
      */
     public void setCpfVaccinator(String cpfVaccinator) {
         this.cpfVaccinator = cpfVaccinator;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.corenRecord);
+        hash = 47 * hash + Objects.hashCode(this.nameVaccinator);
+        hash = 47 * hash + Objects.hashCode(this.cpfVaccinator);
+        hash = 47 * hash + Objects.hashCode(this.administrations);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Vaccinator other = (Vaccinator) obj;
+        if (!Objects.equals(this.corenRecord, other.corenRecord)) {
+            return false;
+        }
+        if (!Objects.equals(this.nameVaccinator, other.nameVaccinator)) {
+            return false;
+        }
+        if (!Objects.equals(this.cpfVaccinator, other.cpfVaccinator)) {
+            return false;
+        }
+        if (!Objects.equals(this.administrations, other.administrations)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return nameVaccinator;
     }
 }

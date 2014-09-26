@@ -2,6 +2,7 @@ package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -33,7 +34,7 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @Column(name = "adress_complement", nullable = false)
     private String adressComplement;
 
-    @Column(name = "cpf", unique = true, updatable = false, length = 14)
+    @Column(name = "cpf", unique = true, updatable = false, length = 15)
     private String cpf;
 
     @Column(name = "rg", unique = true, updatable = false)
@@ -198,6 +199,93 @@ public class PSFUser extends AbstractEntity implements Serializable {
 
     public void setAdressNumber(int adressNumber) {
         this.adressNumber = adressNumber;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.userName);
+        hash = 23 * hash + Objects.hashCode(this.motherName);
+        hash = 23 * hash + Objects.hashCode(this.fatherName);
+        hash = 23 * hash + Objects.hashCode(this.ethnicity);
+        hash = 23 * hash + Objects.hashCode(this.adressComplement);
+        hash = 23 * hash + Objects.hashCode(this.cpf);
+        hash = 23 * hash + Objects.hashCode(this.rg);
+        hash = 23 * hash + Objects.hashCode(this.susCard);
+        hash = 23 * hash + Objects.hashCode(this.responsibleForCompleting);
+        hash = 23 * hash + Objects.hashCode(this.birthDate);
+        hash = 23 * hash + Objects.hashCode(this.registrationDate);
+        hash = 23 * hash + this.gender;
+        hash = 23 * hash + this.adressNumber;
+        hash = 23 * hash + Objects.hashCode(this.adressStreet);
+        hash = 23 * hash + Objects.hashCode(this.healthAgent);
+        hash = 23 * hash + Objects.hashCode(this.vaccine);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PSFUser other = (PSFUser) obj;
+        if (!Objects.equals(this.userName, other.userName)) {
+            return false;
+        }
+        if (!Objects.equals(this.motherName, other.motherName)) {
+            return false;
+        }
+        if (!Objects.equals(this.fatherName, other.fatherName)) {
+            return false;
+        }
+        if (!Objects.equals(this.ethnicity, other.ethnicity)) {
+            return false;
+        }
+        if (!Objects.equals(this.adressComplement, other.adressComplement)) {
+            return false;
+        }
+        if (!Objects.equals(this.cpf, other.cpf)) {
+            return false;
+        }
+        if (!Objects.equals(this.rg, other.rg)) {
+            return false;
+        }
+        if (!Objects.equals(this.susCard, other.susCard)) {
+            return false;
+        }
+        if (!Objects.equals(this.responsibleForCompleting, other.responsibleForCompleting)) {
+            return false;
+        }
+        if (!Objects.equals(this.birthDate, other.birthDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.registrationDate, other.registrationDate)) {
+            return false;
+        }
+        if (this.gender != other.gender) {
+            return false;
+        }
+        if (this.adressNumber != other.adressNumber) {
+            return false;
+        }
+        if (!Objects.equals(this.adressStreet, other.adressStreet)) {
+            return false;
+        }
+        if (!Objects.equals(this.healthAgent, other.healthAgent)) {
+            return false;
+        }
+        if (!Objects.equals(this.vaccine, other.vaccine)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return userName;
     }
 
 }

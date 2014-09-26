@@ -112,7 +112,7 @@ public class HealthAgentController implements Serializable {
     }
 
     public HealthAgent getHealthAgent(long id) {
-        return getFacade().find(id);
+        return (HealthAgent)getFacade().find(id);
     }
 
     public List<HealthAgent> getItemsAvailableSelectMany() {

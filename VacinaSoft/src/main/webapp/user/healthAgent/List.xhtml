@@ -47,6 +47,11 @@
                     </f:facet>
                 </p:dataTable>
             </p:panel>
+            
+            <p:commandButton id="reportButton" value="#{bundle.GenerateReport}" title="#{bundle.GenerateReport}" ajax="false">
+                <p:dataExporter id="reportHealthAgent" target="datalist" encoding="iso-8859-1" pageOnly="true" fileName="#{bundle.Report}" type="pdf" />
+            </p:commandButton>
+            
         </h:form>
 
         <ui:include src="Create.xhtml"/>
