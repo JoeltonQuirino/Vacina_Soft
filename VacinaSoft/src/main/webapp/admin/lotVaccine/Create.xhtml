@@ -22,8 +22,12 @@
                         <p:inputText id="lotCode" value="#{lotVaccineController.selected.lotCode}" title="#{bundle.CreateLotVaccineTitle_lotCode}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_lotCode}"/>
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_amountDose}" for="amountDose" />
                         <p:inputText id="amountDose" value="#{lotVaccineController.selected.amountDose}" title="#{bundle.CreateLotVaccineTitle_amountDose}" />
-                        <p:outputLabel value="#{bundle.CreateLotVaccineLabel_vaccine}" for="vaccine" />
-                        <p:inputText id="vaccine" value="#{lotVaccineController.selected.vaccine}" title="#{bundle.CreateLotVaccineTitle_vaccine}" />
+                        
+                        <p:outputLabel value="#{bundle.CreateLotVaccineLabel_vaccine}" for="idVaccine" />
+                        <p:selectOneMenu id="idVaccine" value="#{lotVaccineController.selected.vaccine}">
+                            <f:selectItems id="serviceLotVaccine" value="#{vaccineController.itemsAvailableSelectOne}" 
+                                           var="idVaccineItem" itemValue="#{idVaccineItem}" />
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_validityDate}" for="validityDate" />
                         <p:inputMask mask="99/99/9999" id="validityDate" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.CreateLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_validityDate}"/>
                     </p:panelGrid>

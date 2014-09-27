@@ -101,7 +101,7 @@ public class Vaccine extends AbstractEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "Vaccine{" + "wayAdministration=" + wayAdministration + ", nameVaccine=" + nameVaccine + ", lots=" + lots + '}';
+        return nameVaccine;
     }
 
 }
