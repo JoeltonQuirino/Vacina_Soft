@@ -27,11 +27,12 @@ public class LoginPhaseListener implements PhaseListener{
         boolean isLoginPageAdmin = (currentPage.lastIndexOf("/admin/*") > -1);
         boolean isLoginPageUser = (currentPage.lastIndexOf("/user/*") > -1);
 
+        
         HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
         //Object currentUser = session.getAttribute("userSytems");
         UserSystems userSystems = (UserSystems) session.getAttribute("userSytems");
         
-        if(LoginController.isUsuarioLogado() && userSystems.getGrupsUsers().equals("Admin") && isLoginPageUser){
+        if(LoginController.isUsuarioLogado() && userSystems.getGrupsUsers().equals("Admin")&& isLoginPageUser){
             try {
                 FacesContext.getCurrentInstance().getExternalContext()
                         .redirect("/VacinaSoft/admin/home.xhtml");

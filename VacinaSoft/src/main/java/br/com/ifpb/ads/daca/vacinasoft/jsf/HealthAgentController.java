@@ -4,14 +4,13 @@ import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.HealthAgentDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.HealthAgent;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.HealthAgentDao;
+import br.com.ifpb.ads.vacinasoft.services.HealthAgentServiceInterface;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -26,7 +25,7 @@ import javax.inject.Inject;
 public class HealthAgentController implements Serializable {
 
     @Inject
-    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.HealthAgentDaoInterface ejbFacade;
+    private HealthAgentServiceInterface ejbFacade;
     private List<HealthAgent> items = null;
     private HealthAgent selected;
 
@@ -47,7 +46,7 @@ public class HealthAgentController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private HealthAgentDaoInterface getFacade() {
+    private HealthAgentServiceInterface getFacade() {
         return ejbFacade;
     }
 

@@ -1,7 +1,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "validity_date", nullable = false, updatable = false)
-    private Calendar validityDate;
+    private Date validityDate;
     
     @Column (name = "laboratory", nullable = false, updatable = false)
     private String laboratory;
@@ -32,7 +32,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal(javax.persistence.TemporalType.DATE)
     @Column (name = "receipt_date", updatable = false)
-    private Calendar receiptDate; // data de recebimento
+    private Date receiptDate; // data de recebimento
     
     @Column (name = "lot_code", nullable = false, updatable = false)
     private String lotCode;
@@ -79,14 +79,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the receiptDate
      */
-    public Calendar getReceiptDate() {
+    public Date getReceiptDate() {
         return receiptDate;
     }
 
     /**
      * @param receiptDate the receiptDate to set
      */
-    public void setReceiptDate(Calendar receiptDate) {
+    public void setReceiptDate(Date receiptDate) {
         this.receiptDate = receiptDate;
     }
 
@@ -135,14 +135,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the validityDate
      */
-    public Calendar getValidityDate() {
+    public Date getValidityDate() {
         return validityDate;
     }
 
     /**
      * @param validityDate the validityDate to set
      */
-    public void setValidityDate(Calendar validityDate) {
+    public void setValidityDate(Date validityDate) {
         this.validityDate = validityDate;
     } 
     

@@ -1,17 +1,15 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
-import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.LotVaccineDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.LotVaccine;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.LotVaccineDao;
+import br.com.ifpb.ads.vacinasoft.services.LotVaccineServiceInterface;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -26,7 +24,7 @@ import javax.inject.Inject;
 public class LotVaccineController implements Serializable {
 
     @Inject
-    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.LotVaccineDaoInterface ejbFacade;
+    private LotVaccineServiceInterface ejbFacade;
     private List<LotVaccine> items = null;
     private LotVaccine selected;
 
@@ -47,7 +45,7 @@ public class LotVaccineController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private LotVaccineDaoInterface getFacade() {
+    private LotVaccineServiceInterface getFacade() {
         return ejbFacade;
     }
 

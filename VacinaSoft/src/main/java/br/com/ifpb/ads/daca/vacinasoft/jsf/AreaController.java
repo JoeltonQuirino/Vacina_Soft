@@ -4,6 +4,7 @@ import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AreaDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Area;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
+import br.com.ifpb.ads.vacinasoft.services.AreaServiceInterface;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +25,7 @@ import javax.inject.Inject;
 public class AreaController implements Serializable {
 
     @Inject
-    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AreaDaoInterface ejbFacade;
+    private AreaServiceInterface ejbFacade;
     private List<Area> items = null;
     private Area selected;
 
@@ -45,7 +46,7 @@ public class AreaController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AreaDaoInterface getFacade() {
+    private AreaServiceInterface getFacade() {
         return ejbFacade;
     }
 

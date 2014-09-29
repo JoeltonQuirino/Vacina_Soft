@@ -72,12 +72,12 @@ public class UserSystems extends AbstractEntity implements Serializable{
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(UserSystems.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.userpassword = passwordSHA256;
+        this.userpassword = passwordSHA256.toUpperCase();
     }
 
     @Override
     public String toString() {
-        return "UserSystems:" + "username=" + username + ", grupsUsers=" + grupsUsers;
+        return "User Systems:" + "username=" + username;
     }
     
 }

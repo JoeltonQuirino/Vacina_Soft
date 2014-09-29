@@ -8,4 +8,5 @@ import br.com.ifpb.ads.daca.vacinasoft.entities.Administration;
  */
 public interface AdministrationDaoInterface extends GenericDaoInterface<Administration> {
     
+        public Long vaccinatedChildren(Integer monthsAgo);
 }

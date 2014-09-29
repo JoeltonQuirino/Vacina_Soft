@@ -1,9 +1,9 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
-import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AdministrationDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Administration;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
+import br.com.ifpb.ads.vacinasoft.services.AdministrationServiceInterface;
 import java.io.Serializable;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,7 +23,7 @@ import javax.inject.Named;
 public class AdministrationController implements Serializable {
 
     @Inject
-    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AdministrationDaoInterface ejbFacade;
+    private AdministrationServiceInterface ejbFacade;
     private List<Administration> items = null;
     private Administration selected;
 
@@ -44,7 +44,7 @@ public class AdministrationController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private AdministrationDaoInterface getFacade() {
+    private AdministrationServiceInterface getFacade() {
         return ejbFacade;
     }
 

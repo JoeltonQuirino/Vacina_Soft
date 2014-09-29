@@ -17,7 +17,7 @@
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_amountAmpoule}" for="amountAmpoule" />
                         <p:inputText id="amountAmpoule" value="#{lotVaccineController.selected.amountAmpoule}" title="#{bundle.CreateLotVaccineTitle_amountAmpoule}" />
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_receiptDate}" for="receiptDate" />
-                        <p:inputText id="receiptDate" value="#{lotVaccineController.selected.receiptDate}" title="#{bundle.CreateLotVaccineTitle_receiptDate}" />
+                        <p:inputMask mask="99/99/9999" id="receiptDate" value="#{lotVaccineController.selected.receiptDate}" title="#{bundle.CreateLotVaccineTitle_receiptDate}" />
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_lotCode}" for="lotCode" />
                         <p:inputText id="lotCode" value="#{lotVaccineController.selected.lotCode}" title="#{bundle.CreateLotVaccineTitle_lotCode}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_lotCode}"/>
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_amountDose}" for="amountDose" />

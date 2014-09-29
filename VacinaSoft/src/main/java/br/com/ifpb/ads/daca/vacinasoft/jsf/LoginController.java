@@ -3,7 +3,8 @@ package br.com.ifpb.ads.daca.vacinasoft.jsf;
 import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.LoginDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.UserSystems;
 import java.io.IOException;
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -16,8 +17,8 @@ import javax.transaction.Transactional;
  * @author MarkusPatriota
  */
 @Named
-@RequestScoped
-public class LoginController {
+@SessionScoped
+public class LoginController implements Serializable{
     
     @Inject
     private LoginDaoInterface loginDaoInterface;

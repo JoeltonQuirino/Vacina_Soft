@@ -1,7 +1,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,11 +48,11 @@ public class PSFUser extends AbstractEntity implements Serializable {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "birth_date", nullable = false, updatable = false)
-    private Calendar birthDate;
+    private Date birthDate;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "registration_date", nullable = false, updatable = false)
-    private Calendar registrationDate;
+    private Date registrationDate;
 
     @Column(name = "gender", nullable = false, updatable = false)
     private char gender;
@@ -169,19 +169,19 @@ public class PSFUser extends AbstractEntity implements Serializable {
         this.responsibleForCompleting = responsibleForCompleting;
     }
 
-    public Calendar getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Calendar birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Calendar getRegistrationDate() {
+    public Date getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Calendar registrationDate) {
+    public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
 

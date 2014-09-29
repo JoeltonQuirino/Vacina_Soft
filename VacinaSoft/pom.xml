@@ -224,6 +224,13 @@
             <version>1.0.10</version>  
         </dependency>
         
+        <!--EasyCriteria: API para deixar o uso de Criteria mais fácil-->
+        <dependency>
+            <groupId>uaihebert.com</groupId>
+            <artifactId>EasyCriteria</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        
     </dependencies>
     
 

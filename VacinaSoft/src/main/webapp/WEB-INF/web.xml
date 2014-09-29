@@ -18,7 +18,7 @@
         <!--Colocar 5 min de sessão-->
     </session-config>
     <welcome-file-list>
-        <welcome-file>home.xhtml</welcome-file>
+        <welcome-file>admin/home.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>primefaces.THEME</param-name>

@@ -4,14 +4,13 @@ import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.VaccinatorDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Vaccinator;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
-import br.com.ifpb.ads.daca.vacinasoft.dao.session.VaccinatorDao;
+import br.com.ifpb.ads.vacinasoft.services.VaccinatorServiceInterface;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 import javax.ejb.EJBException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -26,7 +25,7 @@ import javax.inject.Inject;
 public class VaccinatorController implements Serializable {
 
     @Inject
-    private br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.VaccinatorDaoInterface ejbFacade;
+    private VaccinatorServiceInterface ejbFacade;
     private List<Vaccinator> items = null;
     private Vaccinator selected;
 
@@ -47,7 +46,7 @@ public class VaccinatorController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private VaccinatorDaoInterface getFacade() {
+    private VaccinatorServiceInterface getFacade() {
         return ejbFacade;
     }
 
