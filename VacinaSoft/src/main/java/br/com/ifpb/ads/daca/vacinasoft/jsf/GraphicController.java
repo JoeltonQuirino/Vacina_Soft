@@ -44,7 +44,7 @@ public class GraphicController implements Serializable{
 
     private LineChartModel initLinearModel() {
         LineChartModel model = new LineChartModel();
-        Long auxLisUser1= administrationDaoInterface.vaccinatedChildren(1);
+        administrationDaoInterface.vaccinatedChildren(1);
         LineChartSeries series1 = new LineChartSeries();
         series1.setLabel("Meninos");
         

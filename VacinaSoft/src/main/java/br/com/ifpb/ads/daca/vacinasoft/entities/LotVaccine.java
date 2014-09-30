@@ -1,7 +1,7 @@
 package br.com.ifpb.ads.daca.vacinasoft.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal (javax.persistence.TemporalType.DATE)
     @Column (name = "validity_date", nullable = false, updatable = false)
-    private Date validityDate;
+    private Calendar validityDate;
     
     @Column (name = "laboratory", nullable = false, updatable = false)
     private String laboratory;
@@ -32,7 +32,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     
     @Temporal(javax.persistence.TemporalType.DATE)
     @Column (name = "receipt_date", updatable = false)
-    private Date receiptDate; // data de recebimento
+    private Calendar receiptDate; // data de recebimento
     
     @Column (name = "lot_code", nullable = false, updatable = false)
     private String lotCode;
@@ -43,11 +43,7 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     @ManyToOne
     @JoinColumn(name = "id_vaccine", referencedColumnName = "id", nullable = false, updatable = false)
     private Vaccine idVaccine;
-    
-    @ManyToOne
-    @JoinColumn (name = "id_lot", referencedColumnName = "id", nullable = false, updatable = false)
-    private Administration lotId;
-        
+            
     /**
      * @return the laboratory
      */
@@ -79,14 +75,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the receiptDate
      */
-    public Date getReceiptDate() {
+    public Calendar getReceiptDate() {
         return receiptDate;
     }
 
     /**
      * @param receiptDate the receiptDate to set
      */
-    public void setReceiptDate(Date receiptDate) {
+    public void setReceiptDate(Calendar receiptDate) {
         this.receiptDate = receiptDate;
     }
 
@@ -135,14 +131,14 @@ public class LotVaccine extends AbstractEntity implements Serializable{
     /**
      * @return the validityDate
      */
-    public Date getValidityDate() {
+    public Calendar getValidityDate() {
         return validityDate;
     }
 
     /**
      * @param validityDate the validityDate to set
      */
-    public void setValidityDate(Date validityDate) {
+    public void setValidityDate(Calendar validityDate) {
         this.validityDate = validityDate;
     } 
     
@@ -156,7 +152,6 @@ public class LotVaccine extends AbstractEntity implements Serializable{
         hash = 53 * hash + Objects.hashCode(this.lotCode);
         hash = 53 * hash + this.amountDose;
         hash = 53 * hash + Objects.hashCode(this.idVaccine);
-        hash = 53 * hash + Objects.hashCode(this.lotId);
         return hash;
     }
 
@@ -190,15 +185,13 @@ public class LotVaccine extends AbstractEntity implements Serializable{
         if (!Objects.equals(this.idVaccine, other.idVaccine)) {
             return false;
         }
-        if (!Objects.equals(this.lotId, other.lotId)) {
-            return false;
-        }
+        
         return true;
     }
 
     @Override
     public String toString() {
-        return "LotVaccine{" + "validityDate=" + validityDate + ", laboratory=" + laboratory + ", amountAmpoule=" + amountAmpoule + ", receiptDate=" + receiptDate + ", lotCode=" + lotCode + ", amountDose=" + amountDose + ", idVaccine=" + idVaccine + ", lotId=" + lotId + '}';
+        return "LotVaccine{" + "validityDate=" + validityDate + ", laboratory=" + laboratory + ", amountAmpoule=" + amountAmpoule + ", receiptDate=" + receiptDate + ", lotCode=" + lotCode + ", amountDose=" + amountDose + ", idVaccine=" + idVaccine +'}';
     }
     
 }

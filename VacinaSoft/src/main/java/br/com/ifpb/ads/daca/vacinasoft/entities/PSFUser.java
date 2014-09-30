@@ -68,9 +68,9 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @JoinColumn(name = "id_agent", referencedColumnName = "id", nullable = false, updatable = false)
     private HealthAgent healthAgent;
 
-    @ManyToOne
-    @JoinColumn(name = "id_vaccines", referencedColumnName = "id", nullable = false, updatable = false)
-    private Vaccine vaccine;
+//    @ManyToOne
+//    @JoinColumn(name = "id_vaccines", referencedColumnName = "id", nullable = false, updatable = false)
+//    private Vaccine vaccine;
     
     public Street getAdressStreet() {
         return adressStreet;
@@ -80,21 +80,13 @@ public class PSFUser extends AbstractEntity implements Serializable {
         this.adressStreet = adressStreet;
     }
 
-    public Vaccine getVaccine() {
-        return vaccine;
-    }
-
-    public void setVaccine(Vaccine vaccine) {
-        this.vaccine = vaccine;
-    }
-
-    public HealthAgent getHealthAgent() {
-        return healthAgent;
-    }
-
-    public void setHealthAgent(HealthAgent healthAgent) {
-        this.healthAgent = healthAgent;
-    }
+//    public Vaccine getVaccine() {
+//        return vaccine;
+//    }
+//
+//    public void setVaccine(Vaccine vaccine) {
+//        this.vaccine = vaccine;
+//    }
 
     public String getUserName() {
 
@@ -200,6 +192,14 @@ public class PSFUser extends AbstractEntity implements Serializable {
     public void setAdressNumber(int adressNumber) {
         this.adressNumber = adressNumber;
     }
+
+    public HealthAgent getHealthAgent() {
+        return healthAgent;
+    }
+
+    public void setHealthAgent(HealthAgent healthAgent) {
+        this.healthAgent = healthAgent;
+    }
     
     @Override
     public int hashCode() {
@@ -219,7 +219,6 @@ public class PSFUser extends AbstractEntity implements Serializable {
         hash = 23 * hash + this.adressNumber;
         hash = 23 * hash + Objects.hashCode(this.adressStreet);
         hash = 23 * hash + Objects.hashCode(this.healthAgent);
-        hash = 23 * hash + Objects.hashCode(this.vaccine);
         return hash;
     }
 
@@ -275,9 +274,6 @@ public class PSFUser extends AbstractEntity implements Serializable {
             return false;
         }
         if (!Objects.equals(this.healthAgent, other.healthAgent)) {
-            return false;
-        }
-        if (!Objects.equals(this.vaccine, other.vaccine)) {
             return false;
         }
         return true;

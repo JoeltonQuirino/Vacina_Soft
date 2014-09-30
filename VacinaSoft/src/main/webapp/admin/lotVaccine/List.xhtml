@@ -67,7 +67,7 @@
                         </f:facet>
                         <h:outputText value="#{item.validityDate}"/>
                     </p:column>
-
+                    
                     <f:facet name="footer">
                         <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{lotVaccineController.prepareCreate}" update=":LotVaccineCreateForm" oncomplete="PF('LotVaccineCreateDialog').show()"/>
                         <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":LotVaccineViewForm" oncomplete="PF('LotVaccineViewDialog').show()" disabled="#{empty lotVaccineController.selected}"/>

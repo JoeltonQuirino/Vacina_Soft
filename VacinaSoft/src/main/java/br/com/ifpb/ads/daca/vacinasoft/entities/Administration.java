@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -44,7 +43,8 @@ public class Administration extends AbstractEntity implements Serializable {
     @Column(name = "administration_date", nullable = false, updatable = false)
     private Calendar administrationDate;
 
-    @OneToOne(mappedBy = "lotId", targetEntity = LotVaccine.class)
+    @ManyToOne
+    @JoinColumn (name = "id_lot", referencedColumnName = "id", nullable = false, updatable = false)
     private LotVaccine lotVaccine;
 
     @ManyToOne

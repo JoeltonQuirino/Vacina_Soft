@@ -31,8 +31,8 @@ public class AdministrationDao extends AbstractGenericDao<Administration> implem
     @Override
     public Long vaccinatedChildren(Integer monthsAgo){
         EasyCriteria<Administration> easyCriteria = EasyCriteriaFactory.createQueryCriteria(em, Administration.class);
-        easyCriteria.innerJoin("administration.psfUser");
-        easyCriteria.andEquals("administration.administrationDate", "28/09/2014");
+//        easyCriteria.innerJoin("administration.psfUser");
+//        easyCriteria.andEquals("administration.administrationDate", "28/09/2014");
         System.out.println(easyCriteria.toString());
         easyCriteria.getResultList();
 //        Calendar dateOrder = Calendar.getInstance(); //cria a data corrente data atual
