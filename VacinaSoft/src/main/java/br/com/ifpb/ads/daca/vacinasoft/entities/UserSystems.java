@@ -12,7 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- *
+ * UserSystems entity features necessary for the registration of users in the 
+ * system attributes.
  * @author MarkusPatriota
  */
 
@@ -31,7 +32,10 @@ public class UserSystems extends AbstractEntity implements Serializable{
 
     public UserSystems() {
     }
-
+    
+    /*
+    Getters and Setters
+    */
     public String getGrupsUsers() {
         return grupsUsers;
     }

@@ -9,7 +9,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- *
+ * Street entity features necessary for the registration of new address attributes.
  * @author WitaloCarlos
  */
 @Entity
@@ -33,7 +33,10 @@ public class Street extends AbstractEntity implements Serializable {
 
     @OneToMany(mappedBy = "adressStreet", targetEntity = PSFUser.class)
     private List<PSFUser> psfUsers;
-
+    
+    /*
+    Getters and Setters
+    */
     public List<PSFUser> getPsfUsers() {
         return psfUsers;
     }

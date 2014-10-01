@@ -6,7 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- *
+ * AbstractEntity Extended abstract entity by other entities, have on your 
+ * body just the Id attribute.
  * @author WitaloCarlos
  */
 @MappedSuperclass
@@ -17,6 +18,9 @@ public abstract class AbstractEntity{
     @Column(name = "id")
     private long id;
 
+    /*
+    Getters and Setters
+    */
     public long getId() {
         return id;
     }

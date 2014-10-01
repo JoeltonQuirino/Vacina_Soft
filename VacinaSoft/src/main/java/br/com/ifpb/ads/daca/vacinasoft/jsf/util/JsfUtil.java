@@ -7,6 +7,10 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.model.SelectItem;
 
+/**
+ * JsfUtil generated class to display messages in view.
+ * @author Elisângela
+ */
 public class JsfUtil {
 
     public static SelectItem[] getSelectItems(List<?> entities, boolean selectOne) {

@@ -12,7 +12,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- *
+ * PSFUser entity has attributes required for user registration using the PSF 
+ * responsible for managing their coverage area.
  * @author WitaloCarlos
  */
 @Entity
@@ -67,11 +68,10 @@ public class PSFUser extends AbstractEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_agent", referencedColumnName = "id", nullable = false, updatable = false)
     private HealthAgent healthAgent;
-
-//    @ManyToOne
-//    @JoinColumn(name = "id_vaccines", referencedColumnName = "id", nullable = false, updatable = false)
-//    private Vaccine vaccine;
     
+    /*
+    Getters and Setters
+    */
     public Street getAdressStreet() {
         return adressStreet;
     }
@@ -79,14 +79,6 @@ public class PSFUser extends AbstractEntity implements Serializable {
     public void setAdressStreet(Street adressStreet) {
         this.adressStreet = adressStreet;
     }
-
-//    public Vaccine getVaccine() {
-//        return vaccine;
-//    }
-//
-//    public void setVaccine(Vaccine vaccine) {
-//        this.vaccine = vaccine;
-//    }
 
     public String getUserName() {
 

@@ -1,12 +1,11 @@
 package br.com.ifpb.ads.daca.vacinasoft.dao.session;
 
-
 import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.GenericDaoInterface;
 import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
- *
+ * AbstractGenericDao methods has CRUD system.
  * @author WitaloCarlos
  * @param <T>
  */

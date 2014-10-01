@@ -18,7 +18,16 @@ import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+/**
+ * AdministrationController
+ * @author Elisângela
+ * Annotation used to call this class in our view.
+ */
 @Named("administrationController")
+/**
+ * Annotation to identify the scope of the class. In this case SessionScoped 
+ * everything will be stored and available while the session is active.
+ */
 @SessionScoped
 public class AdministrationController implements Serializable {
 

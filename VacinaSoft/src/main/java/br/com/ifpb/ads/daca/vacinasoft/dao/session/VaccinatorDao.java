@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * VaccinatorDao writes the data to the database Vaccinator.
  * @author WitaloCarlos
  */
 @VaccinatorDaoQualifiers

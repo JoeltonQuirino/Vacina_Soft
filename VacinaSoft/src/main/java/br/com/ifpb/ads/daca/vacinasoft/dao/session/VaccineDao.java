@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * VaccineDao saves data for the Vaccine in the database.
  * @author WitaloCarlos
  */
 @VaccineDaoQualifiers

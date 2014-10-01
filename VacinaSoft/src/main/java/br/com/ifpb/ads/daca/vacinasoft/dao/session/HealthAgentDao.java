@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * HealthAgentDao writes the data to the database HealthAgent.
  * @author WitaloCarlos
  */
 @HealthAgentDaoQualifiers

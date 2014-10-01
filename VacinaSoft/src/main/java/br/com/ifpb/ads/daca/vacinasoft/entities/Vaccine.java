@@ -9,7 +9,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- *
+ * Vaccine entity has the necessary for the registration of vaccines available 
+ * in PSF attributes.
  * @author Joelton
  */
 @Entity
@@ -27,44 +28,29 @@ public class Vaccine extends AbstractEntity implements Serializable {
     @OneToMany(mappedBy = "idVaccine", targetEntity = LotVaccine.class)
     private List<LotVaccine> lots;
 
-    /**
-     * @return the wayAdministration
-     */
+    /*
+    Getters and Setters
+    */
     public String getWayAdministration() {
         return wayAdministration;
     }
 
-    /**
-     * @param wayAdministration the wayAdministration to set
-     */
     public void setWayAdministration(String wayAdministration) {
         this.wayAdministration = wayAdministration;
     }
 
-    /**
-     * @return the nameVaccine
-     */
     public String getNameVaccine() {
         return nameVaccine;
     }
 
-    /**
-     * @param nameVaccine the nameVaccine to set
-     */
     public void setNameVaccine(String nameVaccine) {
         this.nameVaccine = nameVaccine;
     }
 
-    /**
-     * @return the lots
-     */
     public List<LotVaccine> getLots() {
         return lots;
     }
 
-    /**
-     * @param lots the lots to set
-     */
     public void setLots(List<LotVaccine> lots) {
         this.lots = lots;
     }

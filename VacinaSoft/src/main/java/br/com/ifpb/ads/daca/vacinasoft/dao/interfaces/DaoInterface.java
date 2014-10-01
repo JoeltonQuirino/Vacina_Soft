@@ -2,7 +2,7 @@ package br.com.ifpb.ads.daca.vacinasoft.dao.interfaces;
 import br.com.ifpb.ads.daca.vacinasoft.dao.session.*;
 
 /**
- *
+ * DaoInterface
  * @author Hugo Correia & Mauricio Aguiar
  */
 public interface DaoInterface {

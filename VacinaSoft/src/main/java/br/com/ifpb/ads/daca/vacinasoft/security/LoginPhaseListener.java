@@ -13,7 +13,8 @@ import javax.faces.event.PhaseListener;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * LoginPhaseListener PhaseListener implements the interface, where it is 
+ * called for each request of the page.
  * @author MarkusPatriota
  */
 public class LoginPhaseListener implements PhaseListener{

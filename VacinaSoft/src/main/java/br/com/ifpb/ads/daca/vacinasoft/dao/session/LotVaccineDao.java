@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * LotVaccineDao writes the data to the database LotVaccine.
  * @author WitaloCarlos
  */
 @LotVaccineDaoQualifiers

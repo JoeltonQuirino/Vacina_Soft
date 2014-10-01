@@ -14,10 +14,15 @@ import org.primefaces.model.chart.LineChartModel;
 import org.primefaces.model.chart.LineChartSeries;
 
 /**
- *
+ * GraphicController
  * @author MarkusPatriota
+ * Annotation used to call this class in our view.
  */
 @Named
+/**
+ * Annotation to identify the scope of the class. In this case SessionScoped 
+ * everything will be stored and available while the session is active.
+ */
 @SessionScoped
 public class GraphicController implements Serializable{
     

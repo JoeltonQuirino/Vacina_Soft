@@ -11,7 +11,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 /**
- *
+ * Administration entity has the necessary authority for the registration of a new 
+ * type of administration of a vaccine attributes.
  * @author Joelton
  */
 @Entity
@@ -20,9 +21,6 @@ public class Administration extends AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @return the serialVersionUID
-     */
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -55,6 +53,9 @@ public class Administration extends AbstractEntity implements Serializable {
     @JoinColumn(name = "id_vaccinator", referencedColumnName = "id", nullable = false, updatable = false)
     private Vaccinator vaccinator;
 
+    /*
+    Getters and Setters
+    */
     public LotVaccine getLotVaccine() {
         return lotVaccine;
     }
@@ -79,72 +80,42 @@ public class Administration extends AbstractEntity implements Serializable {
         this.vaccinator = vaccinator;
     }
 
-    /**
-     * @return the strategyAdministration
-     */
     public String getStrategyAdministration() {
         return strategyAdministration;
     }
 
-    /**
-     * @param strategyAdministration the strategyAdministration to set
-     */
     public void setStrategyAdministration(String strategyAdministration) {
         this.strategyAdministration = strategyAdministration;
     }
 
-    /**
-     * @return the psfAdministration
-     */
     public String getPsfAdministration() {
         return psfAdministration;
     }
 
-    /**
-     * @param psfAdministration the psfAdministration to set
-     */
     public void setPsfAdministration(String psfAdministration) {
         this.psfAdministration = psfAdministration;
     }
 
-    /**
-     * @return the cnes
-     */
     public String getCnes() {
         return cnes;
     }
 
-    /**
-     * @param cnes the cnes to set
-     */
     public void setCnes(String cnes) {
         this.cnes = cnes;
     }
 
-    /**
-     * @return the vaccineDose
-     */
     public String getVaccineDose() {
         return vaccineDose;
     }
 
-    /**
-     * @param vaccineDose the vaccineDose to set
-     */
     public void setVaccineDose(String vaccineDose) {
         this.vaccineDose = vaccineDose;
     }
 
-    /**
-     * @return the administrationDate
-     */
     public Calendar getAdministrationDate() {
         return administrationDate;
     }
 
-    /**
-     * @param administrationDate the administrationDate to set
-     */
     public void setAdministrationDate(Calendar administrationDate) {
         this.administrationDate = administrationDate;
     }

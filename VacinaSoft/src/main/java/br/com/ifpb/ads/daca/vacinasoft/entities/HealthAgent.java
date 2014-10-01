@@ -11,7 +11,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- *
+ * HealthAgent Entity has the means to complete the registration of a health 
+ * agent attributes.
  * @author WitaloCarlos
  */
 @Entity
@@ -36,6 +37,9 @@ public class HealthAgent extends AbstractEntity implements Serializable {
     @JoinColumn(name = "id_area", referencedColumnName = "id")
     private Area serviceArea;
 
+    /*
+    Getters and Setters
+    */
     public Area getServiceArea() {
         return serviceArea;
     }

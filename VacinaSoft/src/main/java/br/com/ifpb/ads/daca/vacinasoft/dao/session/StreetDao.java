@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * StreetDao saves data for the Street in the database.
  * @author WitaloCarlos
  */
 @StreetDaoQualifiers

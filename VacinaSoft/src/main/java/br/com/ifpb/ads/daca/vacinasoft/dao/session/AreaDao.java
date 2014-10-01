@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * AreaDao writes the attributes referring to area table in the database.   
  * @author WitaloCarlos
  */
 @AreaDaoQualifiers

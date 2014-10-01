@@ -10,7 +10,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 /**
- *
+ * AbstractGenericDaoLogin CRUD class to login users to access the system.
  * @author MarkusPatriota
  * @param <UserSystems>
  */

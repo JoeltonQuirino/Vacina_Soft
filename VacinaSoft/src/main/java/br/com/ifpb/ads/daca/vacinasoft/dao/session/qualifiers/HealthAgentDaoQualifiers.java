@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 
 /**
- *
+ * meio de identificar a classe unicamente
  * @author MarkusPatriota
  */
 @Qualifier

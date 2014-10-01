@@ -29,7 +29,7 @@
                                            var="idVaccineItem" itemValue="#{idVaccineItem}" />
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateLotVaccineLabel_validityDate}" for="validityDate" />
-                        <p:calendar id="validityDate" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.CreateLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_validityDate}"/>
+                        <p:calendar id="validityDate" mask="99/99/9999" pattern="dd/MM/yyyy" value="#{lotVaccineController.selected.validityDate}" title="#{bundle.CreateLotVaccineTitle_validityDate}" required="true" requiredMessage="#{bundle.CreateLotVaccineRequiredMessage_validityDate}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{lotVaccineController.create}" value="#{bundle.Save}" update="display,:LotVaccineListForm:datalist,:growl" oncomplete="handleSubmit(args,'LotVaccineCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="LotVaccineCreateDialog.hide()"/>

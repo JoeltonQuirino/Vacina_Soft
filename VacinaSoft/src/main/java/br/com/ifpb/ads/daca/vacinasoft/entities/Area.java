@@ -8,7 +8,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- *
+ * Area entity, has attributes required for the registration of a new area 
+ * PSF - (Family Health Center).
  * @author WitaloCarlos
  */
 @Entity
@@ -21,6 +22,9 @@ public class Area extends AbstractEntity implements Serializable{
     @OneToOne(mappedBy = "serviceArea", targetEntity = HealthAgent.class)
     private HealthAgent agent;
 
+    /*
+    Getters and Setters
+    */
     public String getDescription() {
         return description;
     }

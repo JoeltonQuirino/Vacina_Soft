@@ -20,7 +20,16 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 
+/**
+ * HealthAgentController
+ * @author Elisângela
+ * Annotation used to call this class in our view.
+ */
 @Named("healthAgentController")
+/**
+ * Annotation to identify the scope of the class. In this case SessionScoped 
+ * everything will be stored and available while the session is active.
+ */
 @SessionScoped
 public class HealthAgentController implements Serializable {
 

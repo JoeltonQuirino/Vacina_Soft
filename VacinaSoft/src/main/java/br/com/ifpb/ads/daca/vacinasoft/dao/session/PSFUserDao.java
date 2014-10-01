@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * PSFUserDao writes the data to the database PSFUser.
  * @author WitaloCarlos
  */
 @PSFUserDaoQualifiers

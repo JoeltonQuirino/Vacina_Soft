@@ -9,7 +9,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- *
+ * Vaccinator entity has the necessary for the registration of individo vaccinator 
+ * responsible for the application of vaccines in PSF attributes.
  * @author Joelton
  */
 @Entity
@@ -18,7 +19,6 @@ public class Vaccinator extends AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    
     @Column(name = "coren_record", nullable = false, updatable = true, unique = true)
     private String corenRecord;
 
@@ -31,6 +31,9 @@ public class Vaccinator extends AbstractEntity implements Serializable {
     @OneToMany(mappedBy = "vaccinator", targetEntity = Administration.class)
     private List<Administration> administrations;
 
+    /*
+    Getters and Setters
+    */
     public List<Administration> getAdministrations() {
         return administrations;
     }
@@ -39,44 +42,26 @@ public class Vaccinator extends AbstractEntity implements Serializable {
         this.administrations = administrations;
     }
 
-    /**
-     * @return the corenRecord
-     */
     public String getCorenRecord() {
         return corenRecord;
     }
 
-    /**
-     * @param corenRecord the corenRecord to set
-     */
     public void setCorenRecord(String corenRecord) {
         this.corenRecord = corenRecord;
     }
 
-    /**
-     * @return the nameVaccinator
-     */
     public String getNameVaccinator() {
         return nameVaccinator;
     }
 
-    /**
-     * @param nameVaccinator the nameVaccinator to set
-     */
     public void setNameVaccinator(String nameVaccinator) {
         this.nameVaccinator = nameVaccinator;
     }
 
-    /**
-     * @return the cpfVaccinator
-     */
     public String getCpfVaccinator() {
         return cpfVaccinator;
     }
 
-    /**
-     * @param cpfVaccinator the cpfVaccinator to set
-     */
     public void setCpfVaccinator(String cpfVaccinator) {
         this.cpfVaccinator = cpfVaccinator;
     }

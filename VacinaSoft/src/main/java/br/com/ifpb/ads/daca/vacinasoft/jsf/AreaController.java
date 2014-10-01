@@ -1,6 +1,5 @@
 package br.com.ifpb.ads.daca.vacinasoft.jsf;
 
-import br.com.ifpb.ads.daca.vacinasoft.dao.interfaces.AreaDaoInterface;
 import br.com.ifpb.ads.daca.vacinasoft.entities.Area;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil;
 import br.com.ifpb.ads.daca.vacinasoft.jsf.util.JsfUtil.PersistAction;
@@ -20,7 +19,16 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 
+/**
+ * AreaController
+ * @author Elisângela
+ * Annotation used to call this class in our view.
+ */
 @Named("areaController")
+/**
+ * Annotation to identify the scope of the class. In this case SessionScoped 
+ * everything will be stored and available while the session is active.
+ */
 @SessionScoped
 public class AreaController implements Serializable {
 

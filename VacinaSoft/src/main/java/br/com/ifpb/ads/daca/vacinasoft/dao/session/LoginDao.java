@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- *
+ * LoginDao writes the data in the Login Database.
  * @author MarkusPatriota
  */
 
